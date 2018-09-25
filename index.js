@@ -8,6 +8,11 @@ const { PORT, CLIENT_ORIGIN } = require('./config');
 const { dbConnect } = require('./db-mongoose');
 // const {dbConnect} = require('./db-knex');
 
+const authRouter = require('./routes/auth');
+const userRouter = require('./routes/users');
+const userProductRouter = require('./routes/userProducts');
+const shaveRouter = require('./routes/shaves');
+
 const app = express();
 
 app.use(
@@ -21,6 +26,28 @@ app.use(
     origin: CLIENT_ORIGIN
   })
 );
+
+app.use('/api/v1/user', userRouter);
+app.use('/api/v1', authRouter);
+app.use('/api/v1/products/personal', userProductRouter);
+app.use('/api/v1/shaves/', shaveRouter);
+
+// Custom 404 Not Found route handler
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+// Custom Error Handler
+app.use((err, req, res, next) => {
+  if (err.status) {
+    const errBody = Object.assign({}, err, { message: err.message });
+    res.status(err.status).json(errBody);
+  } else {
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
 
 function runServer(port = PORT) {
   const server = app
