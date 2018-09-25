@@ -4,6 +4,11 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 
+//get auth
+const passport = require('passport');
+const localStrategy = require('./passport/local');
+const jwtStrategy = require('./passport/jwt');
+
 const { PORT, CLIENT_ORIGIN } = require('./config');
 const { dbConnect } = require('./db-mongoose');
 // const {dbConnect} = require('./db-knex');
@@ -14,6 +19,7 @@ const userProductRouter = require('./routes/userProducts');
 const shaveRouter = require('./routes/shaves');
 
 const app = express();
+app.use(express.json());
 
 app.use(
   morgan(process.env.NODE_ENV === 'production' ? 'common' : 'dev', {
@@ -27,6 +33,13 @@ app.use(
   })
 );
 
+//Utilize local strategy for login
+passport.use(localStrategy);
+
+//Utilize JWS strategy for login
+passport.use(jwtStrategy);
+
+//routers
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1', authRouter);
 app.use('/api/v1/products/personal', userProductRouter);
