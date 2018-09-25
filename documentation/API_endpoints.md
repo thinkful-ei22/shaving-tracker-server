@@ -104,7 +104,7 @@ Request body:
 {
   "brand": "Gillette",
   "model": "Fore 20 Bladed",
-  "type": "razor",
+  "productType": "razor",
   "nickname": "the Overkill",
   "comments": "wow!"
 }
