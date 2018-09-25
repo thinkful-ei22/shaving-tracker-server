@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "333333333333333333333300",
+    "username": "bobuser",
+    "email": "bob@example.com",
+    "password": "$2a$10$iJSPFD5uhrPiefsOn0dNdOCsLu7VomReinsFtZzZcMZYylsYM3She"
+  },
+  {
+    "_id": "333333333333333333333301",
+    "username": "patuser",
+    "email": "pat@example.com",
+    "password": "$2a$10$iJSPFD5uhrPiefsOn0dNdOCsLu7VomReinsFtZzZcMZYylsYM3She"
+  },
+  {
+    "_id": "333333333333333333333302",
+    "username": "janeuser",
+    "email": "jane@example.com",
+    "password": "$2a$10$iJSPFD5uhrPiefsOn0dNdOCsLu7VomReinsFtZzZcMZYylsYM3She"
+  }
+]
