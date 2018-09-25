@@ -92,11 +92,11 @@ Request header:
   "Authorization": "Bearer AUTH_TOKEN"
 ```
 
-### POST /api/v1/products/personal/:productType
+### POST /api/v1/products/personal
 
 Purpose: Adds a new item to the user's personal product collection. If the product exists in global, simply make a reference to that item. If the product does not exist in global, create that item in global and then reference it.
 
-Example: POST <http://example.com/api/v1/products/personal/razors>
+Example: POST <http://example.com/api/v1/products/personal>
 
 Request body:
 
