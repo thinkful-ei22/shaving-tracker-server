@@ -20,8 +20,11 @@ router.get('/', jwtAuth, (req, res, next) => {
 
 });
 
-router.post('/:productType', jwtAuth, (req, res, next) => {
+router.post('/', jwtAuth, (req, res, next) => {
   
+  //Check if new product already exists in globalProducts
+    //if so, get reference to globalproduct, refer to it when adding userProduct
+    //if not, add to globalProduct, refer to it when adding userProduct
 });
 
 router.put('/:id', jwtAuth, (req, res, next) => {
