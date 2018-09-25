@@ -102,7 +102,7 @@ Request body:
 
 ```json
 {
-  "brand": "Gilette",
+  "brand": "Gillette",
   "model": "Fore 20 Bladed",
   "type": "razor",
   "nickname": "the Overkill",
