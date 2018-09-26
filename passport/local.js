@@ -10,21 +10,19 @@ const localStrategy = new LocalStrategy((username, password, done) => {
     .then((results) => {
       user = results;
       if (!user) {
-        return Promise.reject({
-          reason: 'LoginError',
-          message: 'Incorrect username',
-          location: 'username',
-        });
+        const err = new Error('Incorrect username');
+        err.reason = 'LoginError';
+        err.location = 'username';
+        return Promise.reject(err);
       }
       return user.validatePassword(password);
     })
     .then((isValid) => {
       if (!isValid) {
-        return Promise.reject({
-          reason: 'LoginError',
-          message: 'Incorrect password',
-          location: 'password',
-        });
+        const err = new Error('Incorrect password');
+        err.reason = 'LoginError';
+        err.location = 'password';
+        return Promise.reject(err);
       }
       return done(null, user);
     })
