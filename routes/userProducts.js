@@ -64,7 +64,10 @@ router.post('/', jwtAuth, (req, res, next) => {
       return userProduct.save();
     })
     .then((result) => {
-      res.status(201).json(result);
+      res
+      .location(`${req.originalUrl}/${result.id}`)
+      .status(201)
+      .json(result);
     })
     .catch(err => next(err));
 
