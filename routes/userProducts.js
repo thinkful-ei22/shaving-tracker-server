@@ -26,13 +26,7 @@ router.post('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
-<<<<<<< HEAD
   const {brand, model, productType, comment, nickname, subtype} = req.body;
-=======
-  const {
-    brand, model, productType, comment, nickname,
-  } = req.body;
->>>>>>> 62e64ead62db60787f98f1055fc6354fb1040b88
   let ref;
 
   const requiredFields = ['brand', 'model', 'productType'];
@@ -60,19 +54,12 @@ router.post('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
-<<<<<<< HEAD
   Product.findOne({brand, model, productType, subtype})
     .then(result => {
       if (result) {
         return result;
       } else {
         return Product.create({brand, model, productType, subtype});
-=======
-  Product.findOne({ brand, model, productType })
-    .then((result) => {
-      if (result) {
-        return result;
->>>>>>> 62e64ead62db60787f98f1055fc6354fb1040b88
       }
       return Product.create({ brand, model, productType });
     })
