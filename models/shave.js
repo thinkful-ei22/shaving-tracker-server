@@ -9,15 +9,15 @@ const ShaveSchema = new mongoose.Schema({
   aftershaveId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
   additionalCare: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
   rating: Number,
-  date: { type:Date, required:true }
+  date: { type: Date, required: true },
 });
 
 ShaveSchema.set('toObject', {
   virtuals: true, // include built-in virtual `id`
   versionKey: false, // remove `__v` version key
   transform: (doc, ret) => {
-    delete ret._id; // delete `_id`
-  }
+    delete ret._id; // eslint-disable-line no-param-reassign, no-underscore-dangle
+  },
 });
 
 module.exports = mongoose.model('Shave', ShaveSchema);

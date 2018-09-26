@@ -1,10 +1,10 @@
-'use strict';
+
 
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 
-//get auth
+// get auth
 const passport = require('passport');
 const localStrategy = require('./passport/local');
 const jwtStrategy = require('./passport/jwt');
@@ -23,23 +23,24 @@ app.use(express.json());
 
 app.use(
   morgan(process.env.NODE_ENV === 'production' ? 'common' : 'dev', {
-    skip: (req, res) => process.env.NODE_ENV === 'test'
-  })
+    // eslint-disable-next-line no-unused-vars
+    skip: (req, res) => process.env.NODE_ENV === 'test',
+  }),
 );
 
 app.use(
   cors({
-    origin: CLIENT_ORIGIN
-  })
+    origin: CLIENT_ORIGIN,
+  }),
 );
 
-//Utilize local strategy for login
+// Utilize local strategy for login
 passport.use(localStrategy);
 
-//Utilize JWS strategy for login
+// Utilize JWS strategy for login
 passport.use(jwtStrategy);
 
-//routers
+// routers
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1', authRouter);
 app.use('/api/v1/products/personal', userProductRouter);
@@ -53,6 +54,7 @@ app.use((req, res, next) => {
 });
 
 // Custom Error Handler
+// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   if (err.status) {
     const errBody = Object.assign({}, err, { message: err.message });
@@ -67,7 +69,7 @@ function runServer(port = PORT) {
     .listen(port, () => {
       console.info(`App listening on port ${server.address().port}`);
     })
-    .on('error', err => {
+    .on('error', (err) => {
       console.error('Express failed to start');
       console.error(err);
     });
