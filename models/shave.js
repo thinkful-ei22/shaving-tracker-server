@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const ShaveSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  razorId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.razors' },
-  bladeId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.blades' },
-  brushId: { type: mongoose.Schema.Types.ObjectId, ref: 'ProUserProduct.brushes' },
-  latherId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.lathers' },
-  aftershaveId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.aftershaves' },
-  additionalCareId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.additionalcares' },
+  razorId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.razor' },
+  bladeId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.blade' },
+  brushId: { type: mongoose.Schema.Types.ObjectId, ref: 'ProUserProduct.brush' },
+  latherId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.lather' },
+  aftershaveId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.aftershave' },
+  additionalCareId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.additionalcare' },
   rating: Number,
   date: { type:Date, required:true }
 });
