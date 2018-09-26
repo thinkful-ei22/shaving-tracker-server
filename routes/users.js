@@ -85,7 +85,7 @@ router.post('/', (req, res, next) => {
   }
 
   let { username, password, email } = req.body;
-
+  let resUser;
   return User.hashPassword(password)
     .then(digest => {
 
@@ -94,13 +94,29 @@ router.post('/', (req, res, next) => {
         password: digest,
         email
       };
+      console.log('YOUR JOURNEY BEGINS');
       return User.create(newUser);
     })
     .then(result => {
+      resUser = result;
+      const newUserProducts ={
+        userId: resUser.id,
+        razors: [],
+        blades: [],
+        brushes: [],
+        lathers: [],
+        aftershaves: [],
+        additionalcares: [],
+      };
+      console.log('Hello!');
+      return UserProduct.create(newUserProducts);
+    })
+    .then(result =>{
+      console.log('Youre a champion', resUser);
       return res
         .status(201)
-        .location(`/api/v1/user/${result.id}`)
-        .json(result);
+        .location(`/api/v1/user/${resUser.id}`)
+        .json(resUser);
     })
     .catch(err => {
       if (err.code === 11000) {
