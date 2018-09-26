@@ -40,9 +40,6 @@ router.post('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
-  const nullFields = requiredFields.filter(field => !field);
-  console.log(nullFields);
-
 
   Product.findOne({brand, model, productType, subtype})
     .then(result => {
