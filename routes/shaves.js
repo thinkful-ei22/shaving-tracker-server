@@ -20,34 +20,42 @@ router.get('/', jwtAuth, (req, res, next) => {
 // eslint-disable-next-line no-unused-vars
 router.post('/', jwtAuth, (req, res, next) => {
   const userId = req.user.id;
+  
   if (!mongoose.Types.ObjectId.isValid(userId)) {
     const err = new Error('The `userId` is not valid');
     err.status = 400;
     return next(err);
   }
 
-// ```json
-// {
-//     "razorId": "sadf32fs32r",
-//     "bladeId": "sdfafw42fsf",
-//     "brushId": "f5i4yjesfks",
-//     "latherId": "asdfj4rkef3",
-//     "aftershaveId": "f5i4yjes333",
-//     "additionalCare": "f5i4yje2354",
-//     "rating": 3,
-// }
-// ```
+  const requiredFields = ['razorId', 'bladeId', 'brushId', 'latherId', 'aftershaveId', 'additionalCareId', 'date'];
+  const missingField = requiredFields.find(field => !(field in req.body));
+
+  if (missingField) {
+    const err = new Error(`Missing '${missingField}' in request body`);
+    err.status = 422;
+    return next(err);
+  }
+
   const {
-    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating
+    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date
   } = req.body;
 
   const newShave = {
-    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating
+    userId, razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date
+  }
+  let isId = 'Id';
+  for (let field in newShave) {
+    if (field.includes(isId) && newShave[field]) {
+      if (!mongoose.Types.ObjectId.isValid(newShave[field])) {
+        const err = new Error(`The ${field} is not valid`);
+        err.status = 400;
+        return next(err);
+      }    
+    }
   }
 
   Shave.create(newShave)
     .then(result => {
-      console.log(result);
       res
         .location(`${req.originalUrl}/${result.id}`)
         .status(201)

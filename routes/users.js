@@ -91,7 +91,6 @@ router.post('/', (req, res, next) => {
         password: digest,
         email,
       };
-      console.log('YOUR JOURNEY BEGINS');
       return User.create(newUser);
     })
     .then((result) => {
@@ -105,11 +104,9 @@ router.post('/', (req, res, next) => {
         aftershaves: [],
         additionalcares: [],
       };
-      console.log('Hello!');
       return UserProduct.create(newUserProducts);
     })
     .then(() => {
-      console.log('Youre a champion', resUser);
       return res
         .status(201)
         .location(`/api/v1/user/${resUser.id}`)
