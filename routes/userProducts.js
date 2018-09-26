@@ -40,6 +40,21 @@ router.post('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
+  if (!brand) {
+    const err = new Error('Missing \'brand\' in request');
+    err.status = 422;
+    return next(err);
+  }
+  if (!model) {
+    const err = new Error('Missing \'model\' in request');
+    err.status = 422;
+    return next(err);
+  }
+  if (!productType) {
+    const err = new Error('Missing \'productType\' in request');
+    err.status = 422;
+    return next(err);
+  }
 
   Product.findOne({brand, model, productType, subtype})
     .then(result => {
