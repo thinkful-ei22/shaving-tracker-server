@@ -1,7 +1,7 @@
 [
   {
     "userId": "333333333333333333333300",
-    "razors": [
+    "razor": [
       {
         "_id": "444444444444444444444000",
         "productId": "222222222222222222222000",
@@ -21,7 +21,7 @@
         "nickname": "Muhle Tortoise"
       }
     ],
-    "blades": [
+    "blade": [
       {
         "_id": "444444444444444444444003",
         "productId": "222222222222222222222007",
@@ -47,7 +47,7 @@
         "nickname": "Gillette 7 O'Clock"
       }
     ],
-    "brushes": [
+    "brush": [
       {
         "_id": "444444444444444444444007",
         "productId": "222222222222222222222013",
@@ -61,7 +61,7 @@
         "nickname": "TSC Admiral Blue 24mm"
       }
     ],
-    "lathers": [
+    "lather": [
       {
         "_id": "444444444444444444444009",
         "productId": "222222222222222222222019",
@@ -81,7 +81,7 @@
         "nickname": "Chiseled Face Cryogen"
       }
     ],
-    "aftershaves": [
+    "aftershave": [
       {
         "_id": "444444444444444444444012",
         "productId": "222222222222222222222029",
@@ -95,7 +95,7 @@
         "nickname": "CL-Taum Sauk"
       }
     ],
-    "additionalcares": [
+    "additionalcare": [
       {
         "_id": "444444444444444444444014",
         "productId": "222222222222222222222035",
@@ -106,7 +106,7 @@
   },
   {
     "userId": "333333333333333333333301",
-    "razors": [
+    "razor": [
       {
         "_id": "444444444444444444444015",
         "productId": "222222222222222222222001",
@@ -126,7 +126,7 @@
         "nickname": "ATT Calypso M1"
       }
     ],
-    "blades": [
+    "blade": [
       {
         "_id": "444444444444444444444018",
         "productId": "222222222222222222222008",
@@ -152,7 +152,7 @@
         "nickname": "7 O'Clock Sharps"
       }
     ],
-    "brushes": [
+    "brush": [
       {
         "_id": "444444444444444444444022",
         "productId": "222222222222222222222014",
@@ -166,7 +166,7 @@
         "nickname": "Kent BK8"
       }
     ],
-    "lathers": [
+    "lather": [
       {
         "_id": "444444444444444444444024",
         "productId": "222222222222222222222022",
@@ -186,7 +186,7 @@
         "nickname": "Proraso Green"
       }
     ],
-    "aftershaves": [
+    "aftershave": [
       {
         "_id": "444444444444444444444027",
         "productId": "222222222222222222222031",
@@ -200,7 +200,7 @@
         "nickname": "Leviathan Splash"
       }
     ],
-    "additionalcares": [
+    "additionalcare": [
       {
         "_id": "444444444444444444444029",
         "productId": "222222222222222222222036",
@@ -217,7 +217,7 @@
   },
   {
     "userId": "333333333333333333333302",
-    "razors": [
+    "razor": [
       {
         "_id": "444444444444444444444031",
         "productId": "222222222222222222222002",
@@ -237,7 +237,7 @@
         "nickname": "The Turtle"
       }
     ],
-    "blades": [
+    "blade": [
       {
         "_id": "444444444444444444444034",
         "productId": "222222222222222222222008",
@@ -269,7 +269,7 @@
         "nickname": "Polsilver - Super Iridium"
       }
     ],
-    "brushes": [
+    "brush": [
       {
         "_id": "444444444444444444444039",
         "productId": "222222222222222222222015",
@@ -283,7 +283,7 @@
         "nickname": "Stirling Badger"
       }
     ],
-    "lathers": [
+    "lather": [
       {
         "_id": "444444444444444444444041",
         "productId": "222222222222222222222025",
@@ -309,7 +309,7 @@
         "nickname": "Declaration Grooming - Reserve Lavender"
       }
     ],
-    "aftershaves": [
+    "aftershave": [
       {
         "_id": "444444444444444444444045",
         "productId": "222222222222222222222033",
@@ -323,7 +323,7 @@
         "nickname": "Black Ship Grooming Captain Joe"
       }
     ],
-    "additionalcares": [
+    "additionalcare": [
       {
         "_id": "444444444444444444444047",
         "productId": "222222222222222222222036",
