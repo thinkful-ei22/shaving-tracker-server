@@ -40,6 +40,9 @@ router.post('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
+  const nullFields = requiredFields.filter(field => !field);
+  console.log(nullFields);
+
 
   Product.findOne({brand, model, productType, subtype})
     .then(result => {
@@ -61,7 +64,7 @@ router.post('/', jwtAuth, (req, res, next) => {
       if (doesExistArray.length > 0) {
         const err = new Error('Item already exist');
         err.status = 400;
-        return next(err);
+        return Promise.reject(err);
       }
       userProduct[`${productType}`].push({productId: ref._id, comment, nickname});
       return userProduct.save();
