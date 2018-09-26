@@ -1,10 +1,9 @@
-'use strict';
-
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 function validateEmail(email) {
-  const re = new RegExp('[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}','i');
+  // eslint-disable-next-line no-useless-escape
+  const re = new RegExp('[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}', 'i');
   if (!email) {
     return true;
   }
@@ -15,39 +14,39 @@ const UserSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
-    validate:  [validateEmail,'Validation of `{PATH}` failed with value `{VALUE}`']
-  }
+    validate: [validateEmail, 'Validation of `{PATH}` failed with value `{VALUE}`'],
+  },
 });
 
 UserSchema.set('toObject', {
   virtuals: true, // include built-in virtual `id`
   versionKey: false, // remove `__v` version key
   transform: (doc, ret) => {
-    delete ret._id; // delete `_id`
-    delete ret.password;
-  }
+    delete ret._id; // eslint-disable-line no-param-reassign, no-underscore-dangle
+    delete ret.password; // eslint-disable-line no-param-reassign
+  },
 });
 
-UserSchema.methods.serialize = function() {
+UserSchema.methods.serialize = function serialize() {
   return {
     username: this.username || '',
-    name: this.name || ''
+    name: this.name || '',
   };
 };
 
-UserSchema.methods.validatePassword = function(password) {
+UserSchema.methods.validatePassword = function validatePassword(password) {
   return bcrypt.compare(password, this.password);
 };
 
-UserSchema.statics.hashPassword = function(password) {
+UserSchema.statics.hashPassword = function hashPassword(password) {
   return bcrypt.hash(password, 10);
 };
 

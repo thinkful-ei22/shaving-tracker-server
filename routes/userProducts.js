@@ -16,8 +16,6 @@ router.get('/', jwtAuth, (req, res, next) => {
     err.status = 400;
     return next(err);
   }
-  
-
 });
 
 router.post('/', jwtAuth, (req, res, next) => {
@@ -28,7 +26,9 @@ router.post('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
-  const {brand, model, productType, comment, nickname} = req.body;
+  const {
+    brand, model, productType, comment, nickname,
+  } = req.body;
   let ref;
 
   const requiredFields = ['brand', 'model', 'productType'];
@@ -41,29 +41,26 @@ router.post('/', jwtAuth, (req, res, next) => {
   }
 
 
-  Product.findOne({brand, model, productType})
-    .then(result => {
+  Product.findOne({ brand, model, productType })
+    .then((result) => {
       if (result) {
         return result;
-      } else {
-        return Product.create({brand, model, productType});
       }
+      return Product.create({ brand, model, productType });
     })
     .then((result) => {
       ref = result;
-      return UserProduct.findOne({userId});
+      return UserProduct.findOne({ userId });
     })
-    .then(userProduct => {
-      const doesExistArray = userProduct[`${productType}`].filter(item => {
-        return JSON.stringify(item.productId) === JSON.stringify(ref._id);
-      });
+    .then((userProduct) => {
+      const doesExistArray = userProduct[`${productType}`].filter(item => JSON.stringify(item.productId) === JSON.stringify(ref._id));
 
       if (doesExistArray.length > 0) {
         const err = new Error('Item already exist');
         err.status = 400;
         return next(err);
       }
-      userProduct[`${productType}`].push({productId: ref._id, comment, nickname});
+      userProduct[`${productType}`].push({ productId: ref._id, comment, nickname });
       return userProduct.save();
     })
     .then((result) => {
@@ -71,17 +68,19 @@ router.post('/', jwtAuth, (req, res, next) => {
     })
     .catch(err => next(err));
 
-  //Check if new product already exists in globalProducts
-  //if so, get reference to globalproduct, refer to it when adding userProduct
-  //if not, add to globalProduct, refer to it when adding userProduct
+  // Check if new product already exists in globalProducts
+  // if so, get reference to globalproduct, refer to it when adding userProduct
+  // if not, add to globalProduct, refer to it when adding userProduct
 });
 
+// eslint-disable-next-line no-unused-vars
 router.put('/:id', jwtAuth, (req, res, next) => {
-  
+
 });
 
+// eslint-disable-next-line no-unused-vars
 router.delete('/:id', jwtAuth, (req, res, next) => {
-  
+
 });
 
 module.exports = router;

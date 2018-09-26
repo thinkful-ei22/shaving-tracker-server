@@ -15,20 +15,21 @@ router.get('/', jwtAuth, (req, res, next) => {
     err.status = 400;
     return next(err);
   }
-  
-
 });
 
+// eslint-disable-next-line no-unused-vars
 router.post('/', jwtAuth, (req, res, next) => {
-  
+
 });
 
+// eslint-disable-next-line no-unused-vars
 router.put('/:id', jwtAuth, (req, res, next) => {
-  
+
 });
 
+// eslint-disable-next-line no-unused-vars
 router.delete('/:id', jwtAuth, (req, res, next) => {
-  
+
 });
 
 module.exports = router;
