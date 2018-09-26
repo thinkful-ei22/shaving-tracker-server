@@ -42,7 +42,7 @@ router.get('/', jwtAuth, (req, res, next) => {
           userProds[prodType][i].id = results[prodType][i].id;
         }
       });
-      console.log(userProds);
+      // console.log(userProds);
       return Shave.find({userId});
     })
     .then(results =>{
@@ -52,15 +52,10 @@ router.get('/', jwtAuth, (req, res, next) => {
           const resIdx = `${prodType}Id`;
           const shaveItemId = results[i][resIdx];
           const item = userProds[prodType]
-            .filter(prod => JSON.stringify(prod._id) === JSON.stringify(shaveItemId))[0];
+            .filter(prod => JSON.stringify(prod.id) === JSON.stringify(shaveItemId))[0];
             
-          // console.log('============');
-          // console.log('userProds', userProds[prodType]);
-          // console.log('shaveItemId', shaveItemId);
-          // console.log('userProdItem', item);
           returnObj[i][resIdx] = item ? item : null;
         });
-        // console.log(returnObj)
       }
       res.json(returnObj);
     })
