@@ -16,6 +16,11 @@ router.get('/', jwtAuth, (req, res, next) => {
     err.status = 400;
     return next(err);
   }
+
+  UserProduct.findOne({userId})
+    .populate('razor.productId blade.productId brush.productId lather.productId aftershave.productId additionalCare.productId')
+    .then(result => result ? res.json(result) : next())
+    .catch(err => next(err));
 });
 
 router.post('/', jwtAuth, (req, res, next) => {
