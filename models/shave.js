@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const ShaveSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  razorId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
-  bladeId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
-  brushId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
-  latherId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
-  aftershaveId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
-  additionalCare: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+  razorId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.razors' },
+  bladeId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.blades' },
+  brushId: { type: mongoose.Schema.Types.ObjectId, ref: 'ProUserProduct.brushes' },
+  latherId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.lathers' },
+  aftershaveId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.aftershaves' },
+  additionalCareId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct.additionalcares' },
   rating: Number,
   date: { type: Date, required: true },
 });
