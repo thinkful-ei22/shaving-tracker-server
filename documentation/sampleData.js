@@ -8,7 +8,7 @@ const sampleData = {
         type: 'Double Edge',
         productType: 'razor',
         brand: 'Gillette',
-        model: 'Tech Travel',
+        model: 'Tech Travel'
       },
       comment: '1964 vintage',
       nickname: 'Gillette Tech Travel'
@@ -18,7 +18,7 @@ const sampleData = {
         type: 'Double Edge',
         productType: 'razor',
         brand: 'Above the Tie',
-        model: 'Calypso R1',
+        model: 'Calypso R1'
       },
       comment: '',
       nickname: 'ATT Calypso R1'
@@ -28,7 +28,7 @@ const sampleData = {
         type: 'Double Edge',
         productType: 'razor',
         brand: 'Merkur',
-        model: '34c',
+        model: '34c'
       },
       comment: '',
       nickname: 'Merkur 34c'
@@ -38,7 +38,7 @@ const sampleData = {
         type: 'Double Edge',
         productType: 'razor',
         brand: 'Rockwell',
-        model: '6S',
+        model: '6S'
       },
       comment: 'R5',
       nickname: 'Rockwell 6S R5'
@@ -48,7 +48,7 @@ const sampleData = {
         type: 'Double Edge',
         productType: 'razor',
         brand: 'Above the Tie',
-        model: 'Calypso M1',
+        model: 'Calypso M1'
       },
       comment: '',
       nickname: 'ATT Calypso M1'
@@ -58,7 +58,7 @@ const sampleData = {
         type: 'Straight',
         productType: 'razor',
         brand: 'Globusmen',
-        model: 'Gold No.46',
+        model: 'Gold No.46'
       },
       comment: 'vintage German-made blade',
       nickname: 'Globusmen Straight'
@@ -68,7 +68,7 @@ const sampleData = {
         type: 'Double Edge',
         productType: 'razor',
         brand: 'Muhle',
-        model: 'R108 Tortoise Shell',
+        model: 'R108 Tortoise Shell'
       },
       comment: 'closed comb',
       nickname: 'Muhle Tortoise'
@@ -80,7 +80,7 @@ const sampleData = {
         type: null,
         productType: 'blade',
         brand: 'Gillette',
-        model: 'Wilkinson',
+        model: 'Wilkinson'
       },
       comment: '',
       nickname: 'Gillette Wilkinson'
@@ -90,7 +90,7 @@ const sampleData = {
         type: null,
         productType: 'blade',
         brand: 'Gillette',
-        model: 'Silver Blue',
+        model: 'Silver Blue'
       },
       comment: '',
       nickname: 'GSB'
@@ -100,7 +100,7 @@ const sampleData = {
         type: null,
         productType: 'blade',
         brand: 'Feather',
-        model: 'Hi-STAINLESS',
+        model: 'Hi-STAINLESS'
       },
       comment: '',
       nickname: 'Feather'
@@ -110,7 +110,7 @@ const sampleData = {
         type: null,
         productType: 'blade',
         brand: 'Astra',
-        model: 'Superior Platinum',
+        model: 'Superior Platinum'
       },
       comment: '',
       nickname: 'Astra SP'
@@ -120,7 +120,7 @@ const sampleData = {
         type: null,
         productType: 'blade',
         brand: 'Gillette',
-        model: '7 O\'Clock SharpEdge',
+        model: '7 O\'Clock SharpEdge'
       },
       comment: '',
       nickname: 'Gillette 7 O\'Clock'
@@ -130,7 +130,7 @@ const sampleData = {
         type: null,
         productType: 'blade',
         brand: 'Polsilver',
-        model: 'Super Iridium',
+        model: 'Super Iridium'
       },
       comment: '',
       nickname: 'Polsilver - Super Iridium'
@@ -142,7 +142,7 @@ const sampleData = {
         type: 'Boar',
         productType: 'brush',
         brand: 'Surrey',
-        model: '34014 Deluxe',
+        model: '34014 Deluxe'
       },
       comment: '',
       nickname: 'Surrey 34014 Deluxe'
@@ -152,7 +152,7 @@ const sampleData = {
         type: 'Boar',
         productType: 'brush',
         brand: 'Semogue',
-        model: 'Brushbutt 22mm',
+        model: 'Brushbutt 22mm'
       },
       comment: 'Limited Edition #78/100',
       nickname: 'Brushbutt LE'
@@ -162,7 +162,7 @@ const sampleData = {
         type: 'Synthetic',
         productType: 'brush',
         brand: 'RazoRock',
-        model: 'Plissoft Monster',
+        model: 'Plissoft Monster'
       },
       comment: '',
       nickname: 'RazoRock Plissoft Monster'
@@ -172,7 +172,7 @@ const sampleData = {
         type: 'Synthetic',
         productType: 'brush',
         brand: 'Turtleship Shave Co',
-        model: 'Admiral Blue',
+        model: 'Admiral Blue'
       },
       comment: '24mm',
       nickname: 'TSC Admiral Blue 24mm'
@@ -182,7 +182,7 @@ const sampleData = {
         type: 'Badger',
         productType: 'brush',
         brand: 'Kent',
-        model: 'BK8',
+        model: 'BK8'
       },
       comment: '',
       nickname: 'Kent BK8'
@@ -192,7 +192,7 @@ const sampleData = {
         type: 'Badger',
         productType: 'brush',
         brand: 'Stirling Soap Company',
-        model: 'Finest Badger Shave Brush',
+        model: 'Finest Badger Shave Brush'
       },
       comment: '26mm',
       nickname: 'Stirling Badger'
@@ -204,7 +204,7 @@ const sampleData = {
         type: 'Soap',
         productType: 'lather',
         brand: 'Stirling Soap Company',
-        model: 'Barbershop',
+        model: 'Barbershop'
       },
       comment: '',
       nickname: 'Stirling\'s Barbershop'
@@ -214,7 +214,7 @@ const sampleData = {
         type: 'Cream',
         productType: 'lather',
         brand: 'L\'Occitane',
-        model: 'Cade',
+        model: 'Cade'
       },
       comment: '',
       nickname: 'L\'Occitane Cade Rich'
@@ -224,7 +224,7 @@ const sampleData = {
         type: 'Soap',
         productType: 'lather',
         brand: 'Chiseled Face',
-        model: 'Cryogen',
+        model: 'Cryogen'
       },
       comment: 'sampler',
       nickname: 'Chiseled Face Cryogen'
@@ -234,7 +234,7 @@ const sampleData = {
         type: 'Soap',
         productType: 'lather',
         brand: 'Barrister and Mann',
-        model: 'Lavanille',
+        model: 'Lavanille'
       },
       comment: 'tre Citta Line',
       nickname: 'B&M Lavanille'
@@ -244,7 +244,7 @@ const sampleData = {
         type: 'Soap',
         productType: 'lather',
         brand: 'Barrister and Mann',
-        model: 'Leviathan',
+        model: 'Leviathan'
       },
       comment: 'leather | coffee | sandalwood',
       nickname: 'B&M Leviathan'
@@ -254,7 +254,7 @@ const sampleData = {
         type: 'Cream',
         productType: 'lather',
         brand: 'Proraso',
-        model: 'Green',
+        model: 'Green'
       },
       comment: 'horrible, no slickness',
       nickname: 'Proraso Green'
@@ -264,7 +264,7 @@ const sampleData = {
         type: 'Cream',
         productType: 'lather',
         brand: 'Above the Tie',
-        model: 'Lavendar & Lemonade',
+        model: 'Lavendar & Lemonade'
       },
       comment: 'awesome',
       nickname: 'ATT Lemonade'
@@ -274,7 +274,7 @@ const sampleData = {
         type: 'Soap',
         productType: 'lather',
         brand: 'Barrister and Mann',
-        model: 'Roam',
+        model: 'Roam'
       },
       comment: 'Tobacco | Thyme | Grass | Damp Earth | Wood Smoke',
       nickname: 'B&M Roam'
@@ -284,7 +284,7 @@ const sampleData = {
         type: 'Soap',
         productType: 'lather',
         brand: 'Black Ship Grooming',
-        model: 'Captain Joe',
+        model: 'Captain Joe'
       },
       comment: '',
       nickname: 'Black Ship Grooming Captain Joe'
@@ -294,7 +294,7 @@ const sampleData = {
         type: 'Soap',
         productType: 'lather',
         brand: 'Declaration Grooming',
-        model: 'Reserve Lavender',
+        model: 'Reserve Lavender'
       },
       comment: '',
       nickname: 'Declaration Grooming - Reserve Lavender'
@@ -306,7 +306,7 @@ const sampleData = {
         type: 'Splash',
         productType: 'aftershave',
         brand: 'Brut',
-        model: 'Classic',
+        model: 'Classic'
       },
       comment: '',
       nickname: 'Brut Classic'
@@ -316,7 +316,7 @@ const sampleData = {
         type: 'Splash',
         productType: 'aftershave',
         brand: 'Chatillon Lux',
-        model: 'Taum Sauk',
+        model: 'Taum Sauk'
       },
       comment: '',
       nickname: 'CL-Taum Sauk'
@@ -326,7 +326,7 @@ const sampleData = {
         type: 'Splash',
         productType: 'aftershave',
         brand: 'Barrister and Mann',
-        model: 'Lavanille',
+        model: 'Lavanille'
       },
       comment: '',
       nickname: 'Lavanille Splash'
@@ -336,7 +336,7 @@ const sampleData = {
         type: 'Splash',
         productType: 'aftershave',
         brand: 'Barrister and Mann',
-        model: 'Leviathan',
+        model: 'Leviathan'
       },
       comment: '',
       nickname: 'Leviathan Splash'
@@ -346,7 +346,7 @@ const sampleData = {
         type: 'Balm',
         productType: 'aftershave',
         brand: 'Stirling Soap Company',
-        model: 'Sandalwood',
+        model: 'Sandalwood'
       },
       comment: '',
       nickname: 'Stirling Sandalwood Balm'
@@ -356,7 +356,7 @@ const sampleData = {
         type: 'Balm',
         productType: 'aftershave',
         brand: 'Black Ship Grooming',
-        model: 'Captain Joe',
+        model: 'Captain Joe'
       },
       comment: '',
       nickname: 'Black Ship Grooming Captain Joe'
@@ -368,7 +368,7 @@ const sampleData = {
         type: null,
         productType: 'additionalcare',
         brand: 'Proraso',
-        model: 'Green',
+        model: 'Green'
       },
       comment: '',
       nickname: 'Proraso Green'
@@ -378,7 +378,7 @@ const sampleData = {
         type: null,
         productType: 'additionalcare',
         brand: 'Thayers',
-        model: 'Witch Hazel',
+        model: 'Witch Hazel'
       },
       comment: '',
       nickname: 'Thayers Witch Hazel'
@@ -388,7 +388,7 @@ const sampleData = {
         type: null,
         productType: 'additionalcare',
         brand: 'Stirling Soap Company',
-        model: 'Red Delicious - Bath Soap',
+        model: 'Red Delicious - Bath Soap'
       },
       comment: '',
       nickname: 'Stirling Red Delicious Bath Soap'

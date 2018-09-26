@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const ProductSchema = new mongoose.Schema({
   type: String,
-  productType: { type: String, enum: ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additonalcare']},
+  productType: { type: String, enum: ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalcare']},
   brand: String,
   model: String,
 });

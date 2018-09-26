@@ -1,0 +1,13 @@
+[
+  {
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    razorId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+    bladeId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+    brushId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+    latherId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+    aftershaveId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+    additionalCare: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+    rating: Number,
+    date: { type:Date, required:true }
+  }
+]

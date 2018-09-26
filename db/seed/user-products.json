@@ -1,0 +1,335 @@
+[
+  {
+    "userId": "333333333333333333333300",
+    "razors": [
+      {
+        "_id": "444444444444444444444000",
+        "productId": "222222222222222222222000",
+        "comment": "1964 vintage",
+        "nickname": "Gillette Tech Travel"
+      },
+      {
+        "_id": "444444444444444444444001",
+        "productId": "222222222222222222222003",
+        "comment": "R5",
+        "nickname": "Rockwell 6S R5"
+      },
+      {
+        "_id": "444444444444444444444002",
+        "productId": "222222222222222222222006",
+        "comment": "closed comb",
+        "nickname": "Muhle Tortoise"
+      }
+    ],
+    "blades": [
+      {
+        "_id": "444444444444444444444003",
+        "productId": "222222222222222222222007",
+        "comment": "",
+        "nickname": "Gillette Wilkinson"
+      },
+      {
+        "_id": "444444444444444444444004",
+        "productId": "222222222222222222222008",
+        "comment": "",
+        "nickname": "Gillette Silver Blue"
+      },
+      {
+        "_id": "444444444444444444444005",
+        "productId": "222222222222222222222010",
+        "comment": "",
+        "nickname": "Astra SP"
+      },
+      {
+        "_id": "444444444444444444444006",
+        "productId": "222222222222222222222011",
+        "comment": "",
+        "nickname": "Gillette 7 O'Clock"
+      }
+    ],
+    "brushes": [
+      {
+        "_id": "444444444444444444444007",
+        "productId": "222222222222222222222013",
+        "comment": "",
+        "nickname": "Surrey 34014 Deluxe"
+      },
+      {
+        "_id": "444444444444444444444008",
+        "productId": "222222222222222222222016",
+        "comment": "24mm",
+        "nickname": "TSC Admiral Blue 24mm"
+      }
+    ],
+    "lathers": [
+      {
+        "_id": "444444444444444444444009",
+        "productId": "222222222222222222222019",
+        "comment": "",
+        "nickname": "Stirling's Barbershop"
+      },
+      {
+        "_id": "444444444444444444444010",
+        "productId": "222222222222222222222020",
+        "comment": "",
+        "nickname": "L'Occitane Cade Rich"
+      },
+      {
+        "_id": "444444444444444444444011",
+        "productId": "222222222222222222222021",
+        "comment": "sampler",
+        "nickname": "Chiseled Face Cryogen"
+      }
+    ],
+    "aftershaves": [
+      {
+        "_id": "444444444444444444444012",
+        "productId": "222222222222222222222029",
+        "comment": "",
+        "nickname": "Brut Classic"
+      },
+      {
+        "_id": "444444444444444444444013",
+        "productId": "222222222222222222222030",
+        "comment": "",
+        "nickname": "CL-Taum Sauk"
+      }
+    ],
+    "additionalcares": [
+      {
+        "_id": "444444444444444444444014",
+        "productId": "222222222222222222222035",
+        "comment": "",
+        "nickname": "Proraso Green"
+      }
+    ]
+  },
+  {
+    "userId": "333333333333333333333301",
+    "razors": [
+      {
+        "_id": "444444444444444444444015",
+        "productId": "222222222222222222222001",
+        "comment": "",
+        "nickname": "ATT Calypso R1"
+      },
+      {
+        "_id": "444444444444444444444016",
+        "productId": "222222222222222222222002",
+        "comment": "long-handled",
+        "nickname": "Merkur 34c"
+      },
+      {
+        "_id": "444444444444444444444017",
+        "productId": "222222222222222222222004",
+        "comment": "",
+        "nickname": "ATT Calypso M1"
+      }
+    ],
+    "blades": [
+      {
+        "_id": "444444444444444444444018",
+        "productId": "222222222222222222222008",
+        "comment": "",
+        "nickname": "GSB"
+      },
+      {
+        "_id": "444444444444444444444019",
+        "productId": "222222222222222222222009",
+        "comment": "wicked sharp!",
+        "nickname": "Feather"
+      },
+      {
+        "_id": "444444444444444444444020",
+        "productId": "222222222222222222222010",
+        "comment": "",
+        "nickname": "Astra SP"
+      },
+      {
+        "_id": "444444444444444444444021",
+        "productId": "222222222222222222222011",
+        "comment": "tugs a little, not as smooth as I hoped",
+        "nickname": "7 O'Clock Sharps"
+      }
+    ],
+    "brushes": [
+      {
+        "_id": "444444444444444444444022",
+        "productId": "222222222222222222222014",
+        "comment": "Limited Edition #78/100",
+        "nickname": "Brushbutt LE"
+      },
+      {
+        "_id": "444444444444444444444023",
+        "productId": "222222222222222222222017",
+        "comment": "",
+        "nickname": "Kent BK8"
+      }
+    ],
+    "lathers": [
+      {
+        "_id": "444444444444444444444024",
+        "productId": "222222222222222222222022",
+        "comment": "tre Citta Line",
+        "nickname": "B&M Lavanille"
+      },
+      {
+        "_id": "444444444444444444444025",
+        "productId": "222222222222222222222023",
+        "comment": "leather | coffee | sandalwood",
+        "nickname": "B&M Leviathan"
+      },
+      {
+        "_id": "444444444444444444444026",
+        "productId": "222222222222222222222024",
+        "comment": "horrible, no slickness",
+        "nickname": "Proraso Green"
+      }
+    ],
+    "aftershaves": [
+      {
+        "_id": "444444444444444444444027",
+        "productId": "222222222222222222222031",
+        "comment": "",
+        "nickname": "Lavanille Splash"
+      },
+      {
+        "_id": "444444444444444444444028",
+        "productId": "222222222222222222222032",
+        "comment": "",
+        "nickname": "Leviathan Splash"
+      }
+    ],
+    "additionalcares": [
+      {
+        "_id": "444444444444444444444029",
+        "productId": "222222222222222222222036",
+        "comment": "",
+        "nickname": "Thayers Witch Hazel"
+      },
+      {
+        "_id": "444444444444444444444030",
+        "productId": "222222222222222222222037",
+        "comment": "",
+        "nickname": "Stirling Red Delicious Bath Soap"
+      }
+    ]
+  },
+  {
+    "userId": "333333333333333333333302",
+    "razors": [
+      {
+        "_id": "444444444444444444444031",
+        "productId": "222222222222222222222002",
+        "comment": "",
+        "nickname": "Merkur 34c"
+      },
+      {
+        "_id": "444444444444444444444032",
+        "productId": "222222222222222222222005",
+        "comment": "vintage German-made blade",
+        "nickname": "Globusmen Straight"
+      },
+      {
+        "_id": "444444444444444444444033",
+        "productId": "222222222222222222222006",
+        "comment": "Tortoise shell handle",
+        "nickname": "The Turtle"
+      }
+    ],
+    "blades": [
+      {
+        "_id": "444444444444444444444034",
+        "productId": "222222222222222222222008",
+        "comment": "",
+        "nickname": "Silver Blues"
+      },
+      {
+        "_id": "444444444444444444444035",
+        "productId": "222222222222222222222009",
+        "comment": "too sharp, very aggressive",
+        "nickname": "Feather"
+      },
+      {
+        "_id": "444444444444444444444036",
+        "productId": "222222222222222222222010",
+        "comment": "smooth like butter",
+        "nickname": "Astra Platinums"
+      },
+      {
+        "_id": "444444444444444444444037",
+        "productId": "222222222222222222222011",
+        "comment": "2nd favorite",
+        "nickname": "Gillette 7's"
+      },
+      {
+        "_id": "444444444444444444444038",
+        "productId": "222222222222222222222012",
+        "comment": "",
+        "nickname": "Polsilver - Super Iridium"
+      }
+    ],
+    "brushes": [
+      {
+        "_id": "444444444444444444444039",
+        "productId": "222222222222222222222015",
+        "comment": "",
+        "nickname": "RazoRock Plissoft Monster"
+      },
+      {
+        "_id": "444444444444444444444040",
+        "productId": "222222222222222222222018",
+        "comment": "26mm",
+        "nickname": "Stirling Badger"
+      }
+    ],
+    "lathers": [
+      {
+        "_id": "444444444444444444444041",
+        "productId": "222222222222222222222025",
+        "comment": "awesome",
+        "nickname": "ATT Lemonade"
+      },
+      {
+        "_id": "444444444444444444444042",
+        "productId": "222222222222222222222026",
+        "comment": "Tobacco | Thyme | Grass | Damp Earth | Wood Smoke",
+        "nickname": "B&M Roam"
+      },
+      {
+        "_id": "444444444444444444444043",
+        "productId": "222222222222222222222027",
+        "comment": "",
+        "nickname": "Black Ship Grooming Captain Joe"
+      },
+      {
+        "_id": "444444444444444444444044",
+        "productId": "222222222222222222222028",
+        "comment": "",
+        "nickname": "Declaration Grooming - Reserve Lavender"
+      }
+    ],
+    "aftershaves": [
+      {
+        "_id": "444444444444444444444045",
+        "productId": "222222222222222222222033",
+        "comment": "",
+        "nickname": "Stirling Sandalwood Balm"
+      },
+      {
+        "_id": "444444444444444444444046",
+        "productId": "222222222222222222222034",
+        "comment": "",
+        "nickname": "Black Ship Grooming Captain Joe"
+      }
+    ],
+    "additionalcares": [
+      {
+        "_id": "444444444444444444444047",
+        "productId": "222222222222222222222036",
+        "comment": "",
+        "nickname": "Thayers Witch Hazel"
+      }
+    ]
+  }
+]
