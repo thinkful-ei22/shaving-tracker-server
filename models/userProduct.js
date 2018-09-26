@@ -2,32 +2,32 @@ const mongoose = require('mongoose');
 
 const UserProductSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  razors: [{
+  razor: [{
     productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
     comment: String,
     nickname: String,
   }],
-  blades: [{
+  blade: [{
     productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
     comment: String,
     nickname: String,
   }],
-  brushes: [{
+  brush: [{
     productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
     comment: String,
     nickname: String,
   }],
-  lathers: [{
+  lather: [{
     productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
     comment: String,
     nickname: String,
   }],
-  aftershaves: [{
+  aftershave: [{
     productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
     comment: String,
     nickname: String,
   }],
-  additionalcares: [{
+  additionalcare: [{
     productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
     comment: String,
     nickname: String,
