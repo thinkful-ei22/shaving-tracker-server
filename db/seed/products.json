@@ -1,0 +1,268 @@
+[
+  {
+    "_id": "222222222222222222222000",
+    "type": "Double Edge",
+    "productType": "razor",
+    "brand": "Gillette",
+    "model": "Tech Travel"
+  },
+  {
+    "_id": "222222222222222222222001",
+    "type": "Double Edge",
+    "productType": "razor",
+    "brand": "Above the Tie",
+    "model": "Calypso R1"
+  },
+  {
+    "_id": "222222222222222222222002",
+    "type": "Double Edge",
+    "productType": "razor",
+    "brand": "Merkur",
+    "model": "34c"
+  },
+  {
+    "_id": "222222222222222222222003",
+    "type": "Double Edge",
+    "productType": "razor",
+    "brand": "Rockwell",
+    "model": "6S"
+  },
+  {
+    "_id": "222222222222222222222004",
+    "type": "Double Edge",
+    "productType": "razor",
+    "brand": "Above the Tie",
+    "model": "Calypso M1"
+  },
+  {
+    "_id": "222222222222222222222005",
+    "type": "Straight",
+    "productType": "razor",
+    "brand": "Globusmen",
+    "model": "Gold No.46"
+  },
+  {
+    "_id": "222222222222222222222006",
+    "type": "Double Edge",
+    "productType": "razor",
+    "brand": "Muhle",
+    "model": "R108 Tortoise Shell"
+  },
+  {
+    "_id": "222222222222222222222007",
+    "type": null,
+    "productType": "blade",
+    "brand": "Gillette",
+    "model": "Wilkinson"
+  },
+  {
+    "_id": "222222222222222222222008",
+    "type": null,
+    "productType": "blade",
+    "brand": "Gillette",
+    "model": "Silver Blue"
+  },
+  {
+    "_id": "222222222222222222222009",
+    "type": null,
+    "productType": "blade",
+    "brand": "Feather",
+    "model": "Hi-STAINLESS"
+  },
+  {
+    "_id": "222222222222222222222010",
+    "type": null,
+    "productType": "blade",
+    "brand": "Astra",
+    "model": "Superior Platinum"
+  },
+  {
+    "_id": "222222222222222222222011",
+    "type": null,
+    "productType": "blade",
+    "brand": "Gillette",
+    "model": "7 O'Clock SharpEdge"
+  },
+  {
+    "_id": "222222222222222222222012",
+    "type": null,
+    "productType": "blade",
+    "brand": "Polsilver",
+    "model": "Super Iridium"
+  },
+  {
+    "_id": "222222222222222222222013",
+    "type": "Boar",
+    "productType": "brush",
+    "brand": "Surrey",
+    "model": "34014 Deluxe"
+  },
+  {
+    "_id": "222222222222222222222014",
+    "type": "Boar",
+    "productType": "brush",
+    "brand": "Semogue",
+    "model": "Brushbutt 22mm"
+  },
+  {
+    "_id": "222222222222222222222015",
+    "type": "Synthetic",
+    "productType": "brush",
+    "brand": "RazoRock",
+    "model": "Plissoft Monster"
+  },
+  {
+    "_id": "222222222222222222222016",
+    "type": "Synthetic",
+    "productType": "brush",
+    "brand": "Turtleship Shave Co",
+    "model": "Admiral Blue"
+  },
+  {
+    "_id": "222222222222222222222017",
+    "type": "Badger",
+    "productType": "brush",
+    "brand": "Kent",
+    "model": "BK8"
+  },
+  {
+    "_id": "222222222222222222222018",
+    "type": "Badger",
+    "productType": "brush",
+    "brand": "Stirling Soap Company",
+    "model": "Finest Badger Shave Brush"
+  },
+  {
+    "_id": "222222222222222222222019",
+    "type": "Soap",
+    "productType": "lather",
+    "brand": "Stirling Soap Company",
+    "model": "Barbershop"
+  },
+  {
+    "_id": "222222222222222222222020",
+    "type": "Cream",
+    "productType": "lather",
+    "brand": "L\"Occitane",
+    "model": "Cade"
+  },
+  {
+    "_id": "222222222222222222222021",
+    "type": "Soap",
+    "productType": "lather",
+    "brand": "Chiseled Face",
+    "model": "Cryogen"
+  },
+  {
+    "_id": "222222222222222222222022",
+    "type": "Soap",
+    "productType": "lather",
+    "brand": "Barrister and Mann",
+    "model": "Lavanille"
+  },
+  {
+    "_id": "222222222222222222222023",
+    "type": "Soap",
+    "productType": "lather",
+    "brand": "Barrister and Mann",
+    "model": "Leviathan"
+  },
+  {
+    "_id": "222222222222222222222024",
+    "type": "Cream",
+    "productType": "lather",
+    "brand": "Proraso",
+    "model": "Green"
+  },
+  {
+    "_id": "222222222222222222222025",
+    "type": "Cream",
+    "productType": "lather",
+    "brand": "Above the Tie",
+    "model": "Lavendar & Lemonade"
+  },
+  {
+    "_id": "222222222222222222222026",
+    "type": "Soap",
+    "productType": "lather",
+    "brand": "Barrister and Mann",
+    "model": "Roam"
+  },
+  {
+    "_id": "222222222222222222222027",
+    "type": "Soap",
+    "productType": "lather",
+    "brand": "Black Ship Grooming",
+    "model": "Captain Joe"
+  },
+  {
+    "_id": "222222222222222222222028",
+    "type": "Soap",
+    "productType": "lather",
+    "brand": "Declaration Grooming",
+    "model": "Reserve Lavender"
+  },
+  {
+    "_id": "222222222222222222222029",
+    "type": "Splash",
+    "productType": "aftershave",
+    "brand": "Brut",
+    "model": "Classic"
+  },
+  {
+    "_id": "222222222222222222222030",
+    "type": "Splash",
+    "productType": "aftershave",
+    "brand": "Chatillon Lux",
+    "model": "Taum Sauk"
+  },
+  {
+    "_id": "222222222222222222222031",
+    "type": "Splash",
+    "productType": "aftershave",
+    "brand": "Barrister and Mann",
+    "model": "Lavanille"
+  },
+  {
+    "_id": "222222222222222222222032",
+    "type": "Splash",
+    "productType": "aftershave",
+    "brand": "Barrister and Mann",
+    "model": "Leviathan"
+  },
+  {
+    "_id": "222222222222222222222033",
+    "type": "Balm",
+    "productType": "aftershave",
+    "brand": "Stirling Soap Company",
+    "model": "Sandalwood"
+  },
+  {
+    "_id": "222222222222222222222034",
+    "type": "Balm",
+    "productType": "aftershave",
+    "brand": "Black Ship Grooming",
+    "model": "Captain Joe"
+  },
+  {
+    "_id": "222222222222222222222035",
+    "type": null,
+    "productType": "additionalcare",
+    "brand": "Proraso",
+    "model": "Green"
+  },
+  {
+    "_id": "222222222222222222222036",
+    "type": null,
+    "productType": "additionalcare",
+    "brand": "Thayers",
+    "model": "Witch Hazel"
+  },
+  {
+    "_id": "222222222222222222222037",
+    "type": null,
+    "productType": "additionalcare",
+    "brand": "Stirling Soap Company",
+    "model": "Red Delicious - Bath Soap"
+  }
+]
