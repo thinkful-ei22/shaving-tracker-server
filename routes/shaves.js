@@ -37,8 +37,12 @@ router.get('/', jwtAuth, (req, res, next) => {
           globalProductProperties.forEach(property =>{
             userProds[prodType][i][property] = results[prodType][i].productId[property];
           })
+          //manual handling of IDs
+          userProds[prodType][i].productId = userProds[prodType][i].id;
+          userProds[prodType][i].id = results[prodType][i].id;
         }
       });
+      console.log(userProds);
       return Shave.find({userId});
     })
     .then(results =>{
