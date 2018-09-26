@@ -28,7 +28,7 @@ router.post('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
-  const {brand, model, productType, comment, nickname} = req.body;
+  const {brand, model, productType, comment, nickname, subtype} = req.body;
   let ref;
 
   const requiredFields = ['brand', 'model', 'productType'];
@@ -41,12 +41,12 @@ router.post('/', jwtAuth, (req, res, next) => {
   }
 
 
-  Product.findOne({brand, model, productType})
+  Product.findOne({brand, model, productType, subtype})
     .then(result => {
       if (result) {
         return result;
       } else {
-        return Product.create({brand, model, productType});
+        return Product.create({brand, model, productType, subtype});
       }
     })
     .then((result) => {
@@ -66,6 +66,8 @@ router.post('/', jwtAuth, (req, res, next) => {
       userProduct[`${productType}`].push({productId: ref._id, comment, nickname});
       return userProduct.save();
     })
+    .then(() => UserProduct.findOne({userId})
+      .populate('razor.productId blade.productId brush.productId lather.productId aftershave.productId additionalcare.productId'))
     .then((result) => {
       res.status(201).json(result);
     })
