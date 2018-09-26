@@ -30,6 +30,17 @@ router.post('/', jwtAuth, (req, res, next) => {
 
   const {brand, model, productType, comment, nickname} = req.body;
   let ref;
+
+  const requiredFields = ['brand', 'model', 'productType'];
+  const missingField = requiredFields.find(field => !(field in req.body));
+
+  if (missingField) {
+    const err = new Error(`Missing '${missingField}' in request body`);
+    err.status = 422;
+    return next(err);
+  }
+
+
   Product.findOne({brand, model, productType})
     .then(result => {
       if (result) {
