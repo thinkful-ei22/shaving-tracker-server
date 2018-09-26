@@ -1,13 +1,74 @@
 [
   {
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-    razorId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
-    bladeId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
-    brushId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
-    latherId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
-    aftershaveId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
-    additionalCare: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
-    rating: Number,
-    date: { type:Date, required:true }
+    "_id": "555555555555555555555000",
+    "userId": "333333333333333333333300",
+    "razorId": "444444444444444444444000",
+    "bladeId": "444444444444444444444003",
+    "brushId": "444444444444444444444007",
+    "latherId": "444444444444444444444009",
+    "aftershaveId": "444444444444444444444012",
+    "additionalCareId": "444444444444444444444014",
+    "rating": "4",
+    "date": "2018-09-21"
+  },
+  {
+    "_id": "555555555555555555555001",
+    "userId": "333333333333333333333300",
+    "razorId": "444444444444444444444001",
+    "bladeId": "444444444444444444444004",
+    "brushId": "444444444444444444444008",
+    "latherId": "444444444444444444444010",
+    "aftershaveId": "444444444444444444444013",
+    "additionalCareId": null,
+    "rating": "5",
+    "date": "2018-09-24"
+  },
+  {
+    "_id": "555555555555555555555002",
+    "userId": "333333333333333333333301",
+    "razorId": "444444444444444444444015",
+    "bladeId": "444444444444444444444018",
+    "brushId": "444444444444444444444022",
+    "latherId": "444444444444444444444024",
+    "aftershaveId": "444444444444444444444027",
+    "additionalCareId": "444444444444444444444029",
+    "rating": "4",
+    "date": "2018-09-21"
+  },
+  {
+    "_id": "555555555555555555555003",
+    "userId": "333333333333333333333301",
+    "razorId": "444444444444444444444016",
+    "bladeId": "444444444444444444444019",
+    "brushId": "444444444444444444444023",
+    "latherId": "444444444444444444444025",
+    "aftershaveId": "444444444444444444444028",
+    "additionalCareId": "444444444444444444444030",
+    "rating": "3",
+    "date": "2018-09-24"
+  },
+  {
+    "_id": "555555555555555555555004",
+    "userId": "333333333333333333333302",
+    "razorId": "444444444444444444444031",
+    "bladeId": "444444444444444444444034",
+    "brushId": "444444444444444444444039",
+    "latherId": "444444444444444444444041",
+    "aftershaveId": "444444444444444444444045",
+    "additionalCareId": "444444444444444444444047",
+    "rating": "4",
+    "date": "2018-09-21"
+  },
+  {
+    "_id": "555555555555555555555005",
+    "userId": "333333333333333333333302",
+    "razorId": "444444444444444444444032",
+    "bladeId": "444444444444444444444037",
+    "brushId": "444444444444444444444040",
+    "latherId": "444444444444444444444043",
+    "aftershaveId": "444444444444444444444046",
+    "additionalCareId": "444444444444444444444047",
+    "rating": "3",
+    "date": "2018-09-24"
   }
 ]

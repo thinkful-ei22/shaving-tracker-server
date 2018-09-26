@@ -41,26 +41,26 @@ mongoose.connect(DATABASE_URL, { useNewUrlParser: true })
       Shave.createIndexes()
     ]);
   })
-  .then(([
-    users,
-    usersIndexes,
-    products,
-    productsIndexes,
-    userProducts,
-    userProductsIndexes,
-    shaves,
-    shavesIndexes]) => {
-    console.info('Disconnecting');
-    console.info('users: ', users.length);
-    console.info('usersIndexes: ', usersIndexes);
-    console.info('products: ', products.length);
-    console.info('productsIndexes: ', productsIndexes);
-    console.info('userProducts: ', userProducts);
-    console.info('userProductsIndexes: ', userProductsIndexes);
-    console.info('shaves: ', shaves.length);
-    console.info('shavesIndexes: ', shavesIndexes);
-    return mongoose.disconnect();
-  })
+  .then(
+    ([
+      users,
+      usersIndexes,
+      products,
+      productsIndexes,
+      userProducts,
+      userProductsIndexes,
+      shaves,
+      shavesIndexes
+    ]) => {
+      
+      console.info(`Inserted ${users.length} users`);
+      console.info(`Inserted ${products.length} products`);
+      console.info(`Inserted ${userProducts.length} userProducts objects`);
+      console.info(`Inserted ${shaves.length} shaves`);
+
+      console.info('Disconnecting');
+      return mongoose.disconnect();
+    })
   .catch(err => {
     console.error(err);
     return mongoose.disconnect();
