@@ -20,7 +20,7 @@ router.post('/', (req, res, next) => {
 
   const stringFields = ['username', 'password', 'email'];
   const nonStringField = stringFields.find(
-    field => field in req.body && typeof req.body[field] !== 'string'
+    field => field in req.body && typeof req.body[field] !== 'string',
   );
 
   if (nonStringField) {
@@ -38,12 +38,12 @@ router.post('/', (req, res, next) => {
   // to log in, so it's less of a problem.
   const explicityTrimmedFields = ['username', 'password', 'email'];
   const nonTrimmedField = explicityTrimmedFields.find(
-    field => req.body[field].trim() !== req.body[field]
+    field => req.body[field].trim() !== req.body[field],
   );
 
   if (nonTrimmedField) {
     const err = new Error(
-      `Field: '${nonTrimmedField}' cannot start or end with whitespace`
+      `Field: '${nonTrimmedField}' cannot start or end with whitespace`,
     );
     err.status = 422;
     return next(err);
@@ -52,54 +52,51 @@ router.post('/', (req, res, next) => {
   // Ensures character lengths
   const sizedFields = {
     username: { min: 1 },
-    password: { min: 10, max: 72 }
+    password: { min: 10, max: 72 },
   };
 
   const tooSmallField = Object.keys(sizedFields).find(
-    field =>
-      'min' in sizedFields[field] &&
-      req.body[field].trim().length < sizedFields[field].min
+    field => 'min' in sizedFields[field]
+      && req.body[field].trim().length < sizedFields[field].min,
   );
   if (tooSmallField) {
-    const min = sizedFields[tooSmallField].min;
+    const { min } = sizedFields[tooSmallField];
     const err = new Error(
-      `Field: '${tooSmallField}' must be at least ${min} characters long`
+      `Field: '${tooSmallField}' must be at least ${min} characters long`,
     );
     err.status = 422;
     return next(err);
   }
 
   const tooLargeField = Object.keys(sizedFields).find(
-    field =>
-      'max' in sizedFields[field] &&
-      req.body[field].trim().length > sizedFields[field].max
+    field => 'max' in sizedFields[field]
+      && req.body[field].trim().length > sizedFields[field].max,
   );
 
   if (tooLargeField) {
-    const max = sizedFields[tooLargeField].max;
+    const { max } = sizedFields[tooLargeField];
     const err = new Error(
-      `Field: '${tooLargeField}' must be at most ${max} characters long`
+      `Field: '${tooLargeField}' must be at most ${max} characters long`,
     );
     err.status = 422;
     return next(err);
   }
 
-  let { username, password, email } = req.body;
+  const { username, password, email } = req.body;
   let resUser;
   return User.hashPassword(password)
-    .then(digest => {
-
+    .then((digest) => {
       const newUser = {
         username,
         password: digest,
-        email
+        email,
       };
       console.log('YOUR JOURNEY BEGINS');
       return User.create(newUser);
     })
-    .then(result => {
+    .then((result) => {
       resUser = result;
-      const newUserProducts ={
+      const newUserProducts = {
         userId: resUser.id,
         razors: [],
         blades: [],
@@ -111,17 +108,17 @@ router.post('/', (req, res, next) => {
       console.log('Hello!');
       return UserProduct.create(newUserProducts);
     })
-    .then(result =>{
+    .then(() => {
       console.log('Youre a champion', resUser);
       return res
         .status(201)
         .location(`/api/v1/user/${resUser.id}`)
         .json(resUser);
     })
-    .catch(err => {
+    .catch((err) => {
       if (err.code === 11000) {
-        err = new Error('The username already exists');
-        err.status = 400;
+        err = new Error('The username already exists'); // eslint-disable-line no-param-reassign
+        err.status = 400; // eslint-disable-line no-param-reassign
       }
       next(err);
     });
