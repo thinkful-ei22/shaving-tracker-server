@@ -17,29 +17,48 @@ router.get('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
-  let userProducts = {};
+  let userProds = {};
   const productTypes = ['razor', 'blade', 'brush','lather','aftershave','additionalCare'];
+  const userProductProperties = ['nickname', 'comment'];
+  const globalProductProperties = ['subtype', 'productType', 'brand', 'model', 'id'];
+  let returnObj = [];
   UserProduct.findOne({userId})
+    .populate('razor.productId blade.productId brush.productId lather.productId aftershave.productId additionalCare.productId')
     .then(results =>{
-      console.log(results);
       productTypes.forEach(prodType =>{
-        userProducts[prodType] = results[prodType];
+        userProds[prodType] = [];
+        
+        for(let i = 0; i < results[prodType].length; i++){
+          userProds[prodType][i] = {};
+
+          userProductProperties.forEach(property =>{
+            userProds[prodType][i][property] = results[prodType][i][property];
+          });
+          globalProductProperties.forEach(property =>{
+            userProds[prodType][i][property] = results[prodType][i].productId[property];
+          })
+        }
       });
-      // console.log(shaveHistory);
       return Shave.find({userId});
     })
-    // .populate('razorId.productId')
     .then(results =>{
-      productTypes.forEach(prodType =>{
-        // console.log('userProd ', userProducts[prodType]);
-        const resIdx = `${prodType}Id`;
-        // console.log('res0', results[0]);
-        // console.log(`res0 ${resIdx}`, results[0][resIdx]);
-        // const item = shaveHistory[prodType].filter(histItem => histItem.)
-        // results[prodType] = 
-      });
-      // console.log(results);
-      res.json(results);
+      for(let i = 0; i < results.length; i++){
+        returnObj[i] = {}
+        productTypes.forEach(prodType =>{
+          const resIdx = `${prodType}Id`;
+          const shaveItemId = results[i][resIdx];
+          const item = userProds[prodType]
+            .filter(prod => JSON.stringify(prod._id) === JSON.stringify(shaveItemId))[0];
+            
+          // console.log('============');
+          // console.log('userProds', userProds[prodType]);
+          // console.log('shaveItemId', shaveItemId);
+          // console.log('userProdItem', item);
+          returnObj[i][resIdx] = item ? item : null;
+        });
+        // console.log(returnObj)
+      }
+      res.json(returnObj);
     })
     .catch(err =>{
       next(err);
