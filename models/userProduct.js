@@ -27,7 +27,7 @@ const UserProductSchema = new mongoose.Schema({
     comment: String,
     nickname: String,
   }],
-  additionalcare: [{
+  additionalCare: [{
     productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
     comment: String,
     nickname: String,
