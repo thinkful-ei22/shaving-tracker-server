@@ -33,6 +33,8 @@ router.get('/', jwtAuth, (req, res, next) => {
             flattenedShaves[i][`${prodType}`] = null;
           }
         });
+        flattenedShaves[i].date = shaveEvents[i].date;
+        flattenedShaves[i].rating = shaveEvents[i].rating;
       }
 
       res.json(flattenedShaves);
