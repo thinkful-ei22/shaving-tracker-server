@@ -91,30 +91,12 @@ router.post('/', (req, res, next) => {
         password: digest,
         email,
       };
-      console.log('YOUR JOURNEY BEGINS');
       return User.create(newUser);
     })
-    .then((result) => {
-      resUser = result;
-      const newUserProducts = {
-        userId: resUser.id,
-        razors: [],
-        blades: [],
-        brushes: [],
-        lathers: [],
-        aftershaves: [],
-        additionalcares: [],
-      };
-      console.log('Hello!');
-      return UserProduct.create(newUserProducts);
-    })
-    .then(() => {
-      console.log('Youre a champion', resUser);
-      return res
-        .status(201)
-        .location(`/api/v1/user/${resUser.id}`)
-        .json(resUser);
-    })
+    .then(() => res
+      .status(201)
+      .location(`/api/v1/user/${resUser.id}`)
+      .json(resUser))
     .catch((err) => {
       if (err.code === 11000) {
         err = new Error('The username already exists'); // eslint-disable-line no-param-reassign
