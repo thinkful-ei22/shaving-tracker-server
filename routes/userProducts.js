@@ -17,9 +17,17 @@ router.get('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
-  UserProduct.findOne({userId})
-    .populate('razor.productId blade.productId brush.productId lather.productId aftershave.productId additionalCare.productId')
-    .then(result => result ? res.json(result) : next())
+  UserProduct.find({userId}).populate('productId')
+    .then(result => {
+      if (result) {
+        const flatResultArray = result.map(product => {
+          return createFlattenedUserProduct(product);
+        })
+        res.json(flatResultArray) 
+      } else {
+        next()
+      }
+    })
     .catch(err => next(err));
 });
 
