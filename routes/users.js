@@ -93,25 +93,10 @@ router.post('/', (req, res, next) => {
       };
       return User.create(newUser);
     })
-    .then((result) => {
-      resUser = result;
-      const newUserProducts = {
-        userId: resUser.id,
-        razors: [],
-        blades: [],
-        brushes: [],
-        lathers: [],
-        aftershaves: [],
-        additionalcares: [],
-      };
-      return UserProduct.create(newUserProducts);
-    })
-    .then(() => {
-      return res
-        .status(201)
-        .location(`/api/v1/user/${resUser.id}`)
-        .json(resUser);
-    })
+    .then(() => res
+      .status(201)
+      .location(`/api/v1/user/${resUser.id}`)
+      .json(resUser))
     .catch((err) => {
       if (err.code === 11000) {
         err = new Error('The username already exists'); // eslint-disable-line no-param-reassign
