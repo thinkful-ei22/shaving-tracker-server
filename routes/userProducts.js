@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const Product = require('../models/product');
 const UserProduct = require('../models/userProduct');
+const { createFlattenedUserProduct } = require('../helpers');
 
 const jwtAuth = passport.authenticate('jwt', { session: false });
 
@@ -83,25 +84,27 @@ router.post('/', jwtAuth, (req, res, next) => {
     .then((result) => {
       // refers to a pre-existing or newly-created globalProduct
       ref = result;
-      return UserProduct.findOne({ userId });
+      const productId = ref._id;
+      return UserProduct.findOne({ userId, productId });
     })
     .then((userProduct) => {
-      const doesExistArray = userProduct[productType].filter(item => (
-        JSON.stringify(item.productId) === JSON.stringify(ref._id)
-      ));
-
-      if (doesExistArray.length > 0) {
+      if (userProduct) {
         const err = new Error('Item already exists');
         err.status = 400;
         return Promise.reject(err);
       }
-      userProduct[productType].push({ productId: ref._id, comment, nickname });
-      return userProduct.save();
+
+      const productId = ref._id;
+      const newUserProduct = {
+        userId, productId, comment, nickname,
+      };
+
+      return UserProduct.create(newUserProduct);
     })
-    .then(() => UserProduct.findOne({ userId })
-      .populate('razor.productId blade.productId brush.productId lather.productId aftershave.productId additionalcare.productId'))
+    .then(newUserProd => UserProduct.findById(newUserProd.id).populate('productId'))
     .then((result) => {
-      res.status(201).json(result);
+      const flatResult = createFlattenedUserProduct(result);
+      res.status(201).json(flatResult);
     })
     .catch(err => next(err));
 });
