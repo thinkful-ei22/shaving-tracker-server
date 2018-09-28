@@ -16,6 +16,17 @@ router.get('/', jwtAuth, (req, res, next) => {
     err.status = 400;
     return next(err);
   }
+
+  UserProduct.find({ userId }).populate('productId')
+    .then((result) => {
+      if (result) {
+        const flatResultArray = result.map((product) => createFlattenedUserProduct(product));
+        res.json(flatResultArray);
+      } else {
+        next();
+      }
+    })
+    .catch(err => next(err));
 });
 
 router.post('/', jwtAuth, (req, res, next) => {
