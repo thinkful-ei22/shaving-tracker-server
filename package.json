@@ -4,8 +4,7 @@
   "description": "Template for an Express backend",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "nodemon index.js",
     "mocha": "mocha --exit --file test/setup.test.js '!(node_modules)/**/*test.js'",
     "mocha-exit0": "mocha --exit --file test/setup.test.js '!(node_modules)/**/*test.js' || true",
     "test": "nodemon --exec npm run mocha-exit0",
@@ -36,6 +35,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
     "nyc": "^12.0.2"
   }
 }
