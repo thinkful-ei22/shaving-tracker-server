@@ -82,7 +82,7 @@ router.post('/', (req, res, next) => {
     return next(err);
   }
 
-  
+
   const { username, password, email } = req.body;
 
   return User.hashPassword(password)
@@ -94,7 +94,7 @@ router.post('/', (req, res, next) => {
       };
       return User.create(newUser);
     })
-    .then((newUser) => res
+    .then(newUser => res
       .status(201)
       .location(`/api/v1/user/${newUser.id}`)
       .json(newUser))

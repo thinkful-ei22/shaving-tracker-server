@@ -17,15 +17,13 @@ router.get('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
-  UserProduct.find({userId}).populate('productId')
-    .then(result => {
+  UserProduct.find({ userId }).populate('productId')
+    .then((result) => {
       if (result) {
-        const flatResultArray = result.map(product => {
-          return createFlattenedUserProduct(product);
-        })
-        res.json(flatResultArray) 
+        const flatResultArray = result.map((product) => createFlattenedUserProduct(product));
+        res.json(flatResultArray);
       } else {
-        next()
+        next();
       }
     })
     .catch(err => next(err));
