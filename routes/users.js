@@ -84,7 +84,6 @@ router.post('/', (req, res, next) => {
 
 
   const { username, password, email } = req.body;
-
   return User.hashPassword(password)
     .then((digest) => {
       const newUser = {

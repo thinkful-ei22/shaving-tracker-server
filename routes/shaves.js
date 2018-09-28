@@ -17,12 +17,7 @@ router.get('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
-  const userProds = {};
   const productTypes = ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalCare'];
-  const userProductProperties = ['nickname', 'comment'];
-  const globalProductProperties = ['subtype', 'productType', 'brand', 'model', 'id'];
-  const shaveHistory = [];
-
   const populateQuery = productTypes.map(prodType => ({ path: `${prodType}Id`, populate: { path: 'productId' } }));
 
   Shave.find({ userId })
@@ -38,6 +33,8 @@ router.get('/', jwtAuth, (req, res, next) => {
             flattenedShaves[i][`${prodType}`] = null;
           }
         });
+        flattenedShaves[i].date = shaveEvents[i].date;
+        flattenedShaves[i].rating = shaveEvents[i].rating;
       }
 
       res.json(flattenedShaves);
