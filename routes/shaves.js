@@ -81,12 +81,23 @@ router.post('/', jwtAuth, (req, res, next) => {
     }
   }
 
+  const productTypes = ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalCare'];
+  const populateQuery = productTypes.map(prodType => ({ path: `${prodType}Id`, populate: { path: 'productId' } }));
+
   Shave.create(newShave)
-    .then((result) => {
-      res
-        .location(`${req.originalUrl}/${result.id}`)
-        .status(201)
-        .json(result);
+    .then(result => Shave.findById(result.id).populate(populateQuery))
+    .then((shave) => {
+      const flattenedShave = {};
+      productTypes.forEach((prodType) => {
+        if (shave[`${prodType}Id`]) {
+          flattenedShave[`${prodType}`] = createFlattenedUserProduct(shave[`${prodType}Id`]);
+        } else {
+          flattenedShave[`${prodType}`] = null;
+        }
+      });
+      flattenedShave.date = shave.date;
+      flattenedShave.rating = shave.rating;
+      res.status(201).json(flattenedShave);
     })
     .catch((err) => {
       next(err);
