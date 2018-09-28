@@ -20,7 +20,7 @@ router.get('/', jwtAuth, (req, res, next) => {
   UserProduct.find({ userId }).populate('productId')
     .then((result) => {
       if (result) {
-        const flatResultArray = result.map((product) => createFlattenedUserProduct(product));
+        const flatResultArray = result.map(product => createFlattenedUserProduct(product));
         res.json(flatResultArray);
       } else {
         next();
@@ -68,6 +68,8 @@ router.post('/', jwtAuth, (req, res, next) => {
     err.location = `${emptyField}`;
     return next(err);
   }
+
+  console.log(req.body);
 
   // required fields have been validated as existing
   // non-required fields will be undefined and will
