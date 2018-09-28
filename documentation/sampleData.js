@@ -5,7 +5,7 @@ const sampleData = {
   razors: [
     {
       productId: {
-        type: 'Double Edge',
+        subtype: 'Double Edge',
         productType: 'razor',
         brand: 'Gillette',
         model: 'Tech Travel'
@@ -15,7 +15,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Double Edge',
+        subtype: 'Double Edge',
         productType: 'razor',
         brand: 'Above the Tie',
         model: 'Calypso R1'
@@ -25,7 +25,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Double Edge',
+        subtype: 'Double Edge',
         productType: 'razor',
         brand: 'Merkur',
         model: '34c'
@@ -35,7 +35,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Double Edge',
+        subtype: 'Double Edge',
         productType: 'razor',
         brand: 'Rockwell',
         model: '6S'
@@ -45,7 +45,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Double Edge',
+        subtype: 'Double Edge',
         productType: 'razor',
         brand: 'Above the Tie',
         model: 'Calypso M1'
@@ -55,7 +55,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Straight',
+        subtype: 'Straight',
         productType: 'razor',
         brand: 'Globusmen',
         model: 'Gold No.46'
@@ -65,7 +65,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Double Edge',
+        subtype: 'Double Edge',
         productType: 'razor',
         brand: 'Muhle',
         model: 'R108 Tortoise Shell'
@@ -77,7 +77,7 @@ const sampleData = {
   blades: [
     {
       productId: {
-        type: null,
+        subtype: null,
         productType: 'blade',
         brand: 'Gillette',
         model: 'Wilkinson'
@@ -87,7 +87,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: null,
+        subtype: null,
         productType: 'blade',
         brand: 'Gillette',
         model: 'Silver Blue'
@@ -97,7 +97,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: null,
+        subtype: null,
         productType: 'blade',
         brand: 'Feather',
         model: 'Hi-STAINLESS'
@@ -107,7 +107,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: null,
+        subtype: null,
         productType: 'blade',
         brand: 'Astra',
         model: 'Superior Platinum'
@@ -117,7 +117,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: null,
+        subtype: null,
         productType: 'blade',
         brand: 'Gillette',
         model: '7 O\'Clock SharpEdge'
@@ -127,7 +127,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: null,
+        subtype: null,
         productType: 'blade',
         brand: 'Polsilver',
         model: 'Super Iridium'
@@ -139,7 +139,7 @@ const sampleData = {
   brushes: [
     {
       productId: {
-        type: 'Boar',
+        subtype: 'Boar',
         productType: 'brush',
         brand: 'Surrey',
         model: '34014 Deluxe'
@@ -149,7 +149,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Boar',
+        subtype: 'Boar',
         productType: 'brush',
         brand: 'Semogue',
         model: 'Brushbutt 22mm'
@@ -159,7 +159,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Synthetic',
+        subtype: 'Synthetic',
         productType: 'brush',
         brand: 'RazoRock',
         model: 'Plissoft Monster'
@@ -169,7 +169,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Synthetic',
+        subtype: 'Synthetic',
         productType: 'brush',
         brand: 'Turtleship Shave Co',
         model: 'Admiral Blue'
@@ -179,7 +179,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Badger',
+        subtype: 'Badger',
         productType: 'brush',
         brand: 'Kent',
         model: 'BK8'
@@ -189,7 +189,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Badger',
+        subtype: 'Badger',
         productType: 'brush',
         brand: 'Stirling Soap Company',
         model: 'Finest Badger Shave Brush'
@@ -201,7 +201,7 @@ const sampleData = {
   lathers: [
     {
       productId: {
-        type: 'Soap',
+        subtype: 'Soap',
         productType: 'lather',
         brand: 'Stirling Soap Company',
         model: 'Barbershop'
@@ -211,7 +211,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Cream',
+        subtype: 'Cream',
         productType: 'lather',
         brand: 'L\'Occitane',
         model: 'Cade'
@@ -221,7 +221,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Soap',
+        subtype: 'Soap',
         productType: 'lather',
         brand: 'Chiseled Face',
         model: 'Cryogen'
@@ -231,7 +231,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Soap',
+        subtype: 'Soap',
         productType: 'lather',
         brand: 'Barrister and Mann',
         model: 'Lavanille'
@@ -241,7 +241,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Soap',
+        subtype: 'Soap',
         productType: 'lather',
         brand: 'Barrister and Mann',
         model: 'Leviathan'
@@ -251,7 +251,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Cream',
+        subtype: 'Cream',
         productType: 'lather',
         brand: 'Proraso',
         model: 'Green'
@@ -261,7 +261,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Cream',
+        subtype: 'Cream',
         productType: 'lather',
         brand: 'Above the Tie',
         model: 'Lavendar & Lemonade'
@@ -271,7 +271,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Soap',
+        subtype: 'Soap',
         productType: 'lather',
         brand: 'Barrister and Mann',
         model: 'Roam'
@@ -281,7 +281,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Soap',
+        subtype: 'Soap',
         productType: 'lather',
         brand: 'Black Ship Grooming',
         model: 'Captain Joe'
@@ -291,7 +291,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Soap',
+        subtype: 'Soap',
         productType: 'lather',
         brand: 'Declaration Grooming',
         model: 'Reserve Lavender'
@@ -303,7 +303,7 @@ const sampleData = {
   aftershaves: [
     {
       productId: {
-        type: 'Splash',
+        subtype: 'Splash',
         productType: 'aftershave',
         brand: 'Brut',
         model: 'Classic'
@@ -313,7 +313,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Splash',
+        subtype: 'Splash',
         productType: 'aftershave',
         brand: 'Chatillon Lux',
         model: 'Taum Sauk'
@@ -323,7 +323,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Splash',
+        subtype: 'Splash',
         productType: 'aftershave',
         brand: 'Barrister and Mann',
         model: 'Lavanille'
@@ -333,7 +333,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Splash',
+        subtype: 'Splash',
         productType: 'aftershave',
         brand: 'Barrister and Mann',
         model: 'Leviathan'
@@ -343,7 +343,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Balm',
+        subtype: 'Balm',
         productType: 'aftershave',
         brand: 'Stirling Soap Company',
         model: 'Sandalwood'
@@ -353,7 +353,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: 'Balm',
+        subtype: 'Balm',
         productType: 'aftershave',
         brand: 'Black Ship Grooming',
         model: 'Captain Joe'
@@ -365,7 +365,7 @@ const sampleData = {
   additionalcares: [
     {
       productId: {
-        type: null,
+        subtype: null,
         productType: 'additionalcare',
         brand: 'Proraso',
         model: 'Green'
@@ -375,7 +375,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: null,
+        subtype: null,
         productType: 'additionalcare',
         brand: 'Thayers',
         model: 'Witch Hazel'
@@ -385,7 +385,7 @@ const sampleData = {
     },
     {
       productId: {
-        type: null,
+        subtype: null,
         productType: 'additionalcare',
         brand: 'Stirling Soap Company',
         model: 'Red Delicious - Bath Soap'
