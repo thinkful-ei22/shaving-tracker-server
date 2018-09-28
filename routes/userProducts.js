@@ -69,8 +69,6 @@ router.post('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
-  console.log(req.body);
-
   // required fields have been validated as existing
   // non-required fields will be undefined and will
   // not pass through into the database
