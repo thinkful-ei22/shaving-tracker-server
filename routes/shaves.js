@@ -17,57 +17,7 @@ router.get('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
-  const userProds = {};
   const productTypes = ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalCare'];
-  const userProductProperties = ['nickname', 'comment'];
-  const globalProductProperties = ['subtype', 'productType', 'brand', 'model', 'id'];
-  const shaveHistory = [];
-
-  // UserProduct.findOne({ userId })
-  //   .populate('razor.productId blade.productId brush.productId lather.productId aftershave.productId additionalCare.productId')
-  //   .then((results) => {
-  //     productTypes.forEach((prodType) => {
-  //       // initialize arrays to hold each productType for the user
-  //       userProds[prodType] = [];
-
-  //       // loop through each productType array returned in the user's UserProduct db result
-  //       for (let i = 0; i < results[prodType].length; i += 1) {
-  //         // initialize a new object to hold each entry
-  //         userProds[prodType][i] = {};
-
-  //         // copy the user's custom properties into the new object
-  //         userProductProperties.forEach((property) => {
-  //           userProds[prodType][i][property] = results[prodType][i][property];
-  //         });
-  //         // copy the global properties up to the same nesting level as the custom properties
-  //         globalProductProperties.forEach((property) => {
-  //           userProds[prodType][i][property] = results[prodType][i].productId[property];
-  //         });
-  //         // manual handling of IDs
-  //         userProds[prodType][i].productId = userProds[prodType][i].id;
-  //         userProds[prodType][i].id = results[prodType][i].id;
-  //       }
-  //     });
-  //     // get all shave events for the user
-  //     return Shave.find({ userId });
-  //   })
-  //   .then((shaveEvents) => {
-  //     for (let i = 0; i < shaveEvents.length; i += 1) {
-  //       // populate the ids returned in shaveEvents with the
-  //       // constructed data from userProds and save the
-  //       // hydrated data to shaveHistory
-  //       shaveHistory[i] = {};
-  //       productTypes.forEach((prodType) => {
-  //         const productKey = `${prodType}Id`;
-  //         const shaveItemId = shaveEvents[i][productKey];
-  //         const item = userProds[prodType]
-  //           .filter(prod => JSON.stringify(prod.id) === JSON.stringify(shaveItemId))[0];
-
-  //         shaveHistory[i][productKey] = item || null;
-  //       });
-  //     }
-  //     res.json(shaveHistory);
-  //   })
   const populateQuery = productTypes.map(prodType => ({ path: `${prodType}Id`, populate: { path: 'productId' } }));
 
   Shave.find({ userId })
@@ -83,6 +33,9 @@ router.get('/', jwtAuth, (req, res, next) => {
             flattenedShaves[i][`${prodType}`] = null;
           }
         });
+        flattenedShaves[i].id = shaveEvents[i]._id;
+        flattenedShaves[i].date = shaveEvents[i].date;
+        flattenedShaves[i].rating = shaveEvents[i].rating;
       }
 
       res.json(flattenedShaves);
@@ -94,7 +47,51 @@ router.get('/', jwtAuth, (req, res, next) => {
 
 // eslint-disable-next-line no-unused-vars
 router.post('/', jwtAuth, (req, res, next) => {
+  const userId = req.user.id;
 
+  if (!mongoose.Types.ObjectId.isValid(userId)) {
+    const err = new Error('The `userId` is not valid');
+    err.status = 400;
+    return next(err);
+  }
+
+  const requiredFields = ['razorId', 'bladeId', 'brushId', 'latherId', 'aftershaveId', 'additionalCareId', 'date'];
+  const missingField = requiredFields.find(field => !(field in req.body));
+
+  if (missingField) {
+    const err = new Error(`Missing '${missingField}' in request body`);
+    err.status = 422;
+    return next(err);
+  }
+
+  const {
+    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date,
+  } = req.body;
+
+  const newShave = {
+    userId, razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date,
+  };
+  const isId = 'Id';
+  for (const field in newShave) {
+    if (field.includes(isId) && newShave[field]) {
+      if (!mongoose.Types.ObjectId.isValid(newShave[field])) {
+        const err = new Error(`The ${field} is not valid`);
+        err.status = 400;
+        return next(err);
+      }
+    }
+  }
+
+  Shave.create(newShave)
+    .then((result) => {
+      res
+        .location(`${req.originalUrl}/${result.id}`)
+        .status(201)
+        .json(result);
+    })
+    .catch((err) => {
+      next(err);
+    });
 });
 
 // eslint-disable-next-line no-unused-vars
@@ -104,7 +101,21 @@ router.put('/:id', jwtAuth, (req, res, next) => {
 
 // eslint-disable-next-line no-unused-vars
 router.delete('/:id', jwtAuth, (req, res, next) => {
+  const { id } = req.params;
 
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    const err = new Error('The `id` is not valid');
+    err.status = 400;
+    return next(err);
+  }
+
+  Shave.findOneAndRemove({ _id: id })
+    .then(() => {
+      res.sendStatus(204);
+    })
+    .catch((err) => {
+      next(err);
+    });
 });
 
 module.exports = router;

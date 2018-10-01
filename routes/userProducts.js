@@ -20,18 +20,16 @@ router.get('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
-  UserProduct.find({userId})
-    .populate('productId')
-    .sort({ createdAt: 'desc'})
-    .then(results => {;
-      const flatResults = results.map(item => {
-        return createFlattenedUserProduct(item);
-      }); 
-      res.status(201).json(flatResults);
+  UserProduct.find({ userId }).populate('productId')
+    .then((result) => {
+      if (result) {
+        const flatResultArray = result.map((product) => createFlattenedUserProduct(product));
+        res.json(flatResultArray);
+      } else {
+        next();
+      }
     })
-    .catch(err => {
-      next(err);
-    });
+    .catch(err => next(err));
 });
 
 router.post('/', jwtAuth, (req, res, next) => {

@@ -82,8 +82,8 @@ router.post('/', (req, res, next) => {
     return next(err);
   }
 
+
   const { username, password, email } = req.body;
-  let resUser;
   return User.hashPassword(password)
     .then((digest) => {
       const newUser = {
@@ -93,10 +93,10 @@ router.post('/', (req, res, next) => {
       };
       return User.create(newUser);
     })
-    .then(() => res
+    .then(newUser => res
       .status(201)
-      .location(`/api/v1/user/${resUser.id}`)
-      .json(resUser))
+      .location(`/api/v1/user/${newUser.id}`)
+      .json(newUser))
     .catch((err) => {
       if (err.code === 11000) {
         err = new Error('The username already exists'); // eslint-disable-line no-param-reassign
