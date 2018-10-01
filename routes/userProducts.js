@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 
 const router = express.Router();
@@ -11,6 +13,7 @@ const jwtAuth = passport.authenticate('jwt', { session: false });
 
 router.get('/', jwtAuth, (req, res, next) => {
   const userId = req.user.id;
+
   if (!mongoose.Types.ObjectId.isValid(userId)) {
     const err = new Error('The `userId` is not valid');
     err.status = 400;

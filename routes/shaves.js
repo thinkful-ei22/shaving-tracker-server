@@ -33,6 +33,7 @@ router.get('/', jwtAuth, (req, res, next) => {
             flattenedShaves[i][`${prodType}`] = null;
           }
         });
+        flattenedShaves[i].id = shaveEvents[i]._id;
         flattenedShaves[i].date = shaveEvents[i].date;
         flattenedShaves[i].rating = shaveEvents[i].rating;
       }
@@ -111,7 +112,21 @@ router.put('/:id', jwtAuth, (req, res, next) => {
 
 // eslint-disable-next-line no-unused-vars
 router.delete('/:id', jwtAuth, (req, res, next) => {
+  const { id } = req.params;
 
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    const err = new Error('The `id` is not valid');
+    err.status = 400;
+    return next(err);
+  }
+
+  Shave.findOneAndRemove({ _id: id })
+    .then(() => {
+      res.sendStatus(204);
+    })
+    .catch((err) => {
+      next(err);
+    });
 });
 
 module.exports = router;
