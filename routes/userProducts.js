@@ -20,7 +20,7 @@ router.get('/', jwtAuth, (req, res, next) => {
   UserProduct.find({ userId }).populate('productId')
     .then((result) => {
       if (result) {
-        const flatResultArray = result.map((product) => createFlattenedUserProduct(product));
+        const flatResultArray = result.map(product => createFlattenedUserProduct(product));
         res.json(flatResultArray);
       } else {
         next();
