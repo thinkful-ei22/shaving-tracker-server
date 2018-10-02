@@ -73,7 +73,7 @@ router.post('/', jwtAuth, (req, res, next) => {
   // non-required fields will be undefined and will
   // not pass through into the database
   const {
-    brand, model, productType, comment, nickname, subtype,
+    brand, model, productType, comment, nickname, subtype, imageUrl,
   } = req.body;
   // will hold the global Product reference once found or created
   let ref;
@@ -107,7 +107,7 @@ router.post('/', jwtAuth, (req, res, next) => {
 
       const productId = ref._id;
       const newUserProduct = {
-        userId, productId, comment, nickname,
+        userId, productId, comment, nickname, imageUrl,
       };
 
       return UserProduct.create(newUserProduct);
