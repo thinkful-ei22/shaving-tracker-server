@@ -12,7 +12,6 @@ router.post('/upload', formDataParser, (req, res, next) => {
   Promise
     .all(promises)
     .then((result) => {
-      console.log(result[0]);
       res.json(result[0]);
     })
     .catch(err => next(err));
