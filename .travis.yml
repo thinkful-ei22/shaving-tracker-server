@@ -2,3 +2,10 @@ language: node_js
 node_js: node
 services: mongodb
 script: npm run travis
+deploy:
+  provider: heroku
+  api_key:
+    secure: LTlpOVhIeM1ivG70uomcro/oLsRsruWaNMxUYc9pc6dj/ZwYfh6r9KItkGiJ+94mXdcJoTbCS4+lWZkSDAzAYyYfwc8IfWgyB62Cyc6UDUXy4oq/zAoik7vYi0+NnVm6SFzUip6OGn4VgbXx7Y+iCnvLxDx5ZVYtazmafpUsnIIrQ2QUawItTT4xASX+tjBggaXvGhp8S4nvoDGliWy4QKSn5c+e2R9i+e3xVVZSG67RGRW1injHLN5Hgdy9jL4uE/CkZreJE1mE4GA+9Cd2JovCKRMQAtn7pbLUVnkKd07O//BPi5S2ymiXU4MFts9ac9G6K3OmX4xcXiv9z+5wF+FGWrk/GXCgn79SwN1Xyw+t+rFAhhN4wdWNw2JVzZi0oDKTRv1b9KoSsqCUvfuzWiRxk3Yc2GDmVeVTdyhadyWXjf9YLOZPImEoCLKPUi7b54KLYKUJkxPHopSa9llmb7+0WFnDiNXiEEC78RKyY1M9m6VD7KKrQ5Rg9GLxeEL6IljufYOM6gHJGHn6W95dz16lQNCZcOnQtB6LwpgsL9AzvnSB9GdYhY5FKN/6mw8EK/GSHA6cr3JBenygtqUrsDCdm31rMqDiAzTokJeG2wTtWX+KHQoxoUxi7arClK5nmt8EAsj8LpngXKr36rHW7Sc8821LNh0JIEj6msIuoMs=
+  app: hetokibo-shaving-server
+  on:
+    repo: thinkful-ei22/shaving-tracker-server
