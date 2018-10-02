@@ -95,6 +95,7 @@ router.post('/', jwtAuth, (req, res, next) => {
           flattenedShave[`${prodType}`] = null;
         }
       });
+      flattenedShave.id = shave.id;
       flattenedShave.date = shave.date;
       flattenedShave.rating = shave.rating;
       res.status(201).json(flattenedShave);
