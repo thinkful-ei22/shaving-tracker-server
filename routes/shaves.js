@@ -71,6 +71,7 @@ router.post('/', jwtAuth, (req, res, next) => {
   const newShave = {
     userId, razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date,
   };
+
   const isId = 'Id';
   for (const field in newShave) {
     if (field.includes(isId) && newShave[field]) {
@@ -107,7 +108,74 @@ router.post('/', jwtAuth, (req, res, next) => {
 
 // eslint-disable-next-line no-unused-vars
 router.put('/:id', jwtAuth, (req, res, next) => {
+  const { id } = req.params;
+  const userId = req.user.id;
+  const {
+    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date,
+  } = req.body;
 
+  const updateShave = {
+    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date,
+  };
+  const newShave = {
+    userId, razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date,
+  };
+
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    const err = new Error('The `id` is not valid');
+    err.status = 400;
+    return next(err);
+  }
+
+
+  const requiredFields = [
+    'razorId', 'bladeId', 'brushId', 'latherId', 'aftershaveId', 'additionalCareId', 'rating', 'date',
+  ];
+  // console.log(req.body);
+  const missingField = requiredFields.find(field => !(field in req.body));
+
+  if (missingField) {
+    const err = new Error(`Missing '${missingField}' in request body`);
+    err.status = 422;
+    return next(err);
+  }
+
+
+  const isId = 'Id';
+  for (const field in newShave) {
+    if (field.includes(isId) && newShave[field]) {
+      if (!mongoose.Types.ObjectId.isValid(newShave[field])) {
+        const err = new Error(`The ${field} is not valid`);
+        err.status = 400;
+        return next(err);
+      }
+    }
+  }
+
+
+  const productTypes = ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalCare'];
+  const populateQuery = productTypes.map(prodType => ({ path: `${prodType}Id`, populate: { path: 'productId' } }));
+
+
+  Shave.findByIdAndUpdate({ _id: id }, updateShave, { new: true })
+    .populate(populateQuery)
+    .then((shave) => {
+      const flattenedShave = {};
+      productTypes.forEach((prodType) => {
+        if (shave[`${prodType}Id`]) {
+          flattenedShave[`${prodType}`] = createFlattenedUserProduct(shave[`${prodType}Id`]);
+        } else {
+          flattenedShave[`${prodType}`] = null;
+        }
+      });
+      flattenedShave.date = shave.date;
+      flattenedShave.rating = shave.rating;
+      res.status(201).json(flattenedShave);
+    })
+    .catch((err) => {
+      next(err);
+    });
 });
 
 // eslint-disable-next-line no-unused-vars
