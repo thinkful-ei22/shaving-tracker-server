@@ -5,6 +5,7 @@ const UserProductSchema = new mongoose.Schema({
   productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
   comment: String,
   nickname: String,
+  imageUrl: String,
 });
 
 UserProductSchema.set('toObject', {
