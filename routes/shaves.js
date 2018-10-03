@@ -73,7 +73,8 @@ router.post('/', jwtAuth, (req, res, next) => {
   };
 
   const isId = 'Id';
-  for (const field in newShave) {
+  const fields = Object.keys(newShave);
+  fields.forEach((field) => {
     if (field.includes(isId) && newShave[field]) {
       if (!mongoose.Types.ObjectId.isValid(newShave[field])) {
         const err = new Error(`The ${field} is not valid`);
@@ -81,7 +82,7 @@ router.post('/', jwtAuth, (req, res, next) => {
         return next(err);
       }
     }
-  }
+  });
 
   const productTypes = ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalCare'];
   const populateQuery = productTypes.map(prodType => ({ path: `${prodType}Id`, populate: { path: 'productId' } }));
@@ -144,7 +145,8 @@ router.put('/:id', jwtAuth, (req, res, next) => {
 
 
   const isId = 'Id';
-  for (const field in newShave) {
+  const fields = Object.keys(newShave);
+  fields.forEach((field) => {
     if (field.includes(isId) && newShave[field]) {
       if (!mongoose.Types.ObjectId.isValid(newShave[field])) {
         const err = new Error(`The ${field} is not valid`);
@@ -152,7 +154,7 @@ router.put('/:id', jwtAuth, (req, res, next) => {
         return next(err);
       }
     }
-  }
+  });
 
 
   const productTypes = ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalCare'];

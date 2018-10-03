@@ -10,6 +10,7 @@ const ShaveSchema = new mongoose.Schema({
   additionalCareId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct' },
   rating: Number,
   date: { type: Date, required: true },
+  imageUrl: String,
 });
 
 ShaveSchema.set('toObject', {
