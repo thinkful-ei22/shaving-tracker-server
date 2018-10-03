@@ -17,6 +17,7 @@ const authRouter = require('./routes/auth');
 const userRouter = require('./routes/users');
 const userProductRouter = require('./routes/userProducts');
 const shaveRouter = require('./routes/shaves');
+const communityRouter = require('./routes/community');
 
 const app = express();
 app.use(express.json());
@@ -45,6 +46,7 @@ app.use('/api/v1/user', userRouter);
 app.use('/api/v1', authRouter);
 app.use('/api/v1/products/personal', userProductRouter);
 app.use('/api/v1/shaves/', shaveRouter);
+app.use('/api/v1/community/', communityRouter);
 
 // Custom 404 Not Found route handler
 app.use((req, res, next) => {
