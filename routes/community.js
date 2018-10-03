@@ -28,10 +28,12 @@ router.get('/shaves/:start/:end', jwtAuth, (req, res, next) => {
                 date: {$gte: startFilter, $lte: endFilter}
     })
     .populate(populateQuery)
+    .populate('userId')
     .then((shaveEvents) => {
       const flattenedShaves = [];
       for (let i = 0; i < shaveEvents.length; i += 1) {
         flattenedShaves[i] = {};
+        flattenedShaves[i].username = shaveEvents[i].userId.username;
         productTypes.forEach((prodType) => {
           if (shaveEvents[i][`${prodType}Id`]) {
             flattenedShaves[i][`${prodType}`] = createFlattenedUserProduct(shaveEvents[i][`${prodType}Id`]);
