@@ -9,7 +9,7 @@ const { createFlattenedUserProduct } = require('../helpers');
 
 const jwtAuth = passport.authenticate('jwt', { session: false });
 
-router.get('/', jwtAuth, (req, res, next) => {
+router.get('/shaves/:start/:end', jwtAuth, (req, res, next) => {
   const userId = req.user.id;
   if (!mongoose.Types.ObjectId.isValid(userId)) {
     const err = new Error('The `userId` is not valid');
@@ -17,11 +17,16 @@ router.get('/', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
+  const startFilter = req.params.start;
+  const endFilter = req.params.end;
 
   const productTypes = ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalCare'];
   const populateQuery = productTypes.map(prodType => ({ path: `${prodType}Id`, populate: { path: 'productId' } }));
 
-  Shave.find({ userId: {$ne: userId} })
+  Shave.find({  userId: {$ne: userId},
+                share: true,
+                date: {$gte: startFilter, $lte: endFilter}
+    })
     .populate(populateQuery)
     .then((shaveEvents) => {
       const flattenedShaves = [];
