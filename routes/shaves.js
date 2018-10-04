@@ -35,6 +35,7 @@ router.get('/', jwtAuth, (req, res, next) => {
         });
         flattenedShaves[i].id = shaveEvents[i]._id;
         flattenedShaves[i].date = shaveEvents[i].date;
+        flattenedShaves[i].share = shaveEvents[i].share;
         flattenedShaves[i].rating = shaveEvents[i].rating;
       }
 
@@ -65,11 +66,11 @@ router.post('/', jwtAuth, (req, res, next) => {
   }
 
   const {
-    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date,
+    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, share,
   } = req.body;
 
   const newShave = {
-    userId, razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date,
+    userId, razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, share,
   };
 
   const isId = 'Id';
@@ -98,6 +99,7 @@ router.post('/', jwtAuth, (req, res, next) => {
         }
       });
       flattenedShave.date = shave.date;
+      flattenedShave.share = shave.share;
       flattenedShave.rating = shave.rating;
       res.status(201).json(flattenedShave);
     })
