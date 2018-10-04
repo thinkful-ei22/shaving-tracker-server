@@ -20,6 +20,7 @@ const userRouter = require('./routes/users');
 const userProductRouter = require('./routes/userProducts');
 const shaveRouter = require('./routes/shaves');
 const imageRouter = require('./routes/images');
+const communityRouter = require('./routes/community');
 
 const app = express();
 
@@ -54,8 +55,9 @@ passport.use(jwtStrategy);
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1', authRouter);
 app.use('/api/v1/products/personal', userProductRouter);
-app.use('/api/v1/shaves', shaveRouter);
+app.use('/api/v1/shaves/', shaveRouter);
 app.use('/api/v1/image', imageRouter);
+app.use('/api/v1/community/', communityRouter);
 
 // Custom 404 Not Found route handler
 app.use((req, res, next) => {

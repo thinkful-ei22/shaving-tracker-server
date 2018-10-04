@@ -10,7 +10,8 @@
     "additionalCareId": "444444444444444444444014",
     "rating": "4",
     "date": "2018-09-21",
-    "imageUrl": ""
+    "imageUrl": "",
+    "share": true
   },
   {
     "_id": "555555555555555555555001",
@@ -36,7 +37,8 @@
     "additionalCareId": "444444444444444444444029",
     "rating": "4",
     "date": "2018-09-21",
-    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5n9nwO_JYqgktJmSLQeTj9Ywy8DS-Djmw1PnMgAJVN4r8QhFD"
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5n9nwO_JYqgktJmSLQeTj9Ywy8DS-Djmw1PnMgAJVN4r8QhFD",
+    "share": true
   },
   {
     "_id": "555555555555555555555003",
@@ -62,7 +64,8 @@
     "additionalCareId": "444444444444444444444047",
     "rating": "4",
     "date": "2018-09-21",
-    "imageUrl": ""
+    "imageUrl": "",
+    "share": true
   },
   {
     "_id": "555555555555555555555005",
@@ -75,6 +78,7 @@
     "additionalCareId": "444444444444444444444047",
     "rating": "3",
     "date": "2018-09-24",
-    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxga1cQQrLUfLPZqgL8rCuIcEgmoqtmxo-YN_13mRIkuIQkLMX"
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxga1cQQrLUfLPZqgL8rCuIcEgmoqtmxo-YN_13mRIkuIQkLMX",
+    "share": true
   }
 ]
