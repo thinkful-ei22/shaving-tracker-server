@@ -101,7 +101,6 @@ router.post('/', jwtAuth, (req, res, next) => {
       flattenedShave.date = shave.date;
       flattenedShave.share = shave.share;
       flattenedShave.rating = shave.rating;
-      console.log(flattenedShave);
       res.status(201).json(flattenedShave);
     })
     .catch((err) => {
