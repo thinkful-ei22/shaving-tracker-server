@@ -114,6 +114,7 @@ router.put('/:id', jwtAuth, (req, res, next) => {
     razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date,
   } = req.body;
 
+
   const updateShave = {
     razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date,
   };
@@ -169,6 +170,7 @@ router.put('/:id', jwtAuth, (req, res, next) => {
           flattenedShave[`${prodType}`] = null;
         }
       });
+      flattenedShave.id = shave._id;
       flattenedShave.date = shave.date;
       flattenedShave.rating = shave.rating;
       res.status(201).json(flattenedShave);
