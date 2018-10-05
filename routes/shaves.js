@@ -129,6 +129,7 @@ router.put('/:id', jwtAuth, (req, res, next) => {
     razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, share,
   } = req.body;
 
+
   const updateShave = {
     razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, share,
   };
