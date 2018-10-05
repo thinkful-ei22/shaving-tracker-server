@@ -4,335 +4,383 @@
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222000",
     "comment": "1964 vintage",
-    "nickname": "Gillette Tech Travel"
+    "nickname": "Gillette Tech Travel",
+    "imageUrl": "https://farm3.static.flickr.com/2643/4052280439_cd56947ff6.jpg"
   },
   {
     "_id": "444444444444444444444001",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222003",
     "comment": "R5",
-    "nickname": "Rockwell 6S R5"
+    "nickname": "Rockwell 6S R5",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0287/7154/products/rockwell6S-min_6cd69685-29fb-46f7-ab67-edc74bf02005_2000x.jpg?v=1538245952"
   },
   {
     "_id": "444444444444444444444002",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222006",
     "comment": "closed comb",
-    "nickname": "Muhle Tortoise"
+    "nickname": "Muhle Tortoise",
+    "imageUrl": "https://www.executive-shaving.co.uk/media/catalog/product/cache/image/1000x1320/10403905f6d1165665e73b29646fc5ad/m/u/muhle-r108-safety-razor-tor.jpg"
   },
   {
     "_id": "444444444444444444444003",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222007",
     "comment": "",
-    "nickname": "Gillette Wilkinson"
+    "nickname": "Gillette Wilkinson",
+    "imageUrl": "https://i.ebayimg.com/images/g/KGsAAOSwikdawiMp/s-l640.jpg"
   },
   {
     "_id": "444444444444444444444004",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222008",
     "comment": "",
-    "nickname": "Gillette Silver Blue"
+    "nickname": "Gillette Silver Blue",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2398/1395/products/gillette-silver-blue-double-edge-razor-blades-5-pak_520x.jpg?v=1533594399"
   },
   {
     "_id": "444444444444444444444005",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222010",
     "comment": "",
-    "nickname": "Astra SP"
+    "nickname": "Astra SP",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0204/2842/products/Astra_SP_-_2_RGT0IRBDS2ZO_61c14291-895e-4262-be84-6f76c093f265.JPG?v=1527201099"
   },
   {
     "_id": "444444444444444444444006",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222011",
     "comment": "",
-    "nickname": "Gillette 7 O'Clock"
+    "nickname": "Gillette 7 O'Clock",
+    "imageUrl": "http://cdn.shopify.com/s/files/1/1690/0287/products/gillette-7-o-clock-super-stainless-double-edge-blades_grande.jpg?v=1498227446"
   },
   {
     "_id": "444444444444444444444007",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222013",
     "comment": "",
-    "nickname": "Surrey 34014 Deluxe"
+    "nickname": "Surrey 34014 Deluxe",
+    "imageUrl": "https://i.ebayimg.com/images/g/50MAAOSwQYZWtt3y/s-l300.jpg"
   },
   {
     "_id": "444444444444444444444008",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222016",
     "comment": "24mm",
-    "nickname": "TSC Admiral Blue 24mm"
+    "nickname": "TSC Admiral Blue 24mm",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1448/2702/products/Turtleshipmay34_grande.jpg?v=1496094806"
   },
   {
     "_id": "444444444444444444444009",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222019",
     "comment": "",
-    "nickname": "Stirling's Barbershop"
+    "nickname": "Stirling's Barbershop",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2398/1395/products/stirling-soap-company-shave-soap-barbershop_576x.jpg?v=1533596461"
   },
   {
     "_id": "444444444444444444444010",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222020",
     "comment": "",
-    "nickname": "L'Occitane Cade Rich"
+    "nickname": "L'Occitane Cade Rich",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41RG1HEH1dL.jpg"
   },
   {
     "_id": "444444444444444444444011",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222021",
     "comment": "sampler",
-    "nickname": "Chiseled Face Cryogen"
+    "nickname": "Chiseled Face Cryogen",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61ISpk9O4NL._SY355_.jpg"
   },
   {
     "_id": "444444444444444444444012",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222029",
     "comment": "",
-    "nickname": "Brut Classic"
+    "nickname": "Brut Classic",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51MifkbnbuL._SY550_.jpg"
   },
   {
     "_id": "444444444444444444444013",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222030",
     "comment": "",
-    "nickname": "CL-Taum Sauk"
+    "nickname": "CL-Taum Sauk",
+    "imageUrl": "https://topofthechain.ca/wp-content/uploads/2017/10/Chatillon-lux-unconditional-surrender-toner.png"
   },
   {
     "_id": "444444444444444444444014",
     "userId": "333333333333333333333300",
     "productId": "222222222222222222222035",
     "comment": "",
-    "nickname": "Proraso Green"
+    "nickname": "Proraso Green",
+    "imageUrl": "https://sharpologist.com/wp-content/uploads/2012/04/IMG_18641.jpg"
   },
   {
     "_id": "444444444444444444444015",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222001",
     "comment": "",
-    "nickname": "ATT Calypso R1"
+    "nickname": "ATT Calypso R1",
+    "imageUrl": "https://i.imgur.com/UWfTc2q.jpg"
   },
   {
     "_id": "444444444444444444444016",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222002",
     "comment": "long-handled",
-    "nickname": "Merkur 34c"
+    "nickname": "Merkur 34c",
+    "imageUrl": "https://cdn2.bigcommerce.com/server1600/x3llq02/products/89/images/281/merkur-34c-hd__96613__31855.1375572042.500.659.jpg?c=2"
   },
   {
     "_id": "444444444444444444444017",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222004",
     "comment": "",
-    "nickname": "ATT Calypso M1"
+    "nickname": "ATT Calypso M1",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1100/0406/products/calypso-m1-aluminum-safety-razor-above-the-tie_3_116_1024x1024.jpg?v=1532608159"
   },
   {
     "_id": "444444444444444444444018",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222008",
     "comment": "",
-    "nickname": "GSB"
+    "nickname": "GSB",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZ_w0Yb677ONBvjHw2J2bQukHADOIOApxv1mlUvKJbaJezuga"
   },
   {
     "_id": "444444444444444444444019",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222009",
     "comment": "wicked sharp!",
-    "nickname": "Feather"
+    "nickname": "Feather",
+    "imageUrl": "https://i.pinimg.com/236x/53/15/a4/5315a409b7a0049d44222447dae1af6d.jpg"
   },
   {
     "_id": "444444444444444444444020",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222010",
     "comment": "",
-    "nickname": "Astra SP"
+    "nickname": "Astra SP",
+    "imageUrl": "https://i.redd.it/8ugnmkeolt6z.jpg"
   },
   {
     "_id": "444444444444444444444021",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222011",
     "comment": "tugs a little, not as smooth as I hoped",
-    "nickname": "7 O'Clock Sharps"
+    "nickname": "7 O'Clock Sharps",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2398/1395/products/gillette-7-oclock-sharpedge-double-edge-razor-blades-5-blades_954x.jpg?v=1537912987"
   },
   {
     "_id": "444444444444444444444022",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222014",
     "comment": "Limited Edition #78/100",
-    "nickname": "Brushbutt LE"
+    "nickname": "Brushbutt LE", 
+    "imageUrl": "https://i.imgur.com/m05rFOz.jpg"
   },
   {
     "_id": "444444444444444444444023",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222017",
     "comment": "",
-    "nickname": "Kent BK8"
+    "nickname": "Kent BK8",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51kAQjNb05L._SY355_.jpg"
   },
   {
     "_id": "444444444444444444444024",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222022",
     "comment": "tre Citta Line",
-    "nickname": "B&M Lavanille"
+    "nickname": "B&M Lavanille",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0392/1301/products/bmlavanillesoap_grande.jpg?v=1533956837"
   },
   {
     "_id": "444444444444444444444025",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222023",
     "comment": "leather | coffee | sandalwood",
-    "nickname": "B&M Leviathan"
+    "nickname": "B&M Leviathan",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0392/1301/products/Leviathan_Soap_878a92e0-66fc-417a-a820-9388eb8a08e8_1024x1024.jpg?v=1533956844"
   },
   {
     "_id": "444444444444444444444026",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222024",
     "comment": "horrible, no slickness",
-    "nickname": "Proraso Green"
+    "nickname": "Proraso Green",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0812/3241/products/PRO-P307N-3_copy_1200x.jpg?v=1488916487|//cdn.shopify.com/s/files/1/0812/3241/products/PRO-P307N-3_copy_2048x.jpg?v=1488916487"
   },
   {
     "_id": "444444444444444444444027",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222031",
     "comment": "",
-    "nickname": "Lavanille Splash"
+    "nickname": "Lavanille Splash",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0648/7651/products/LAVANILLE_AFTERSHAVE_SQUARE_70c03830-aa45-4a98-b5b7-e6f593bc688d_2048x2048.jpg?v=1515681770"
   },
   {
     "_id": "444444444444444444444028",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222032",
     "comment": "",
-    "nickname": "Leviathan Splash"
+    "nickname": "Leviathan Splash",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0648/7651/products/Leviathan_Aftershave_2048x2048.jpg?v=1536070728"
   },
   {
     "_id": "444444444444444444444029",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222036",
     "comment": "",
-    "nickname": "Thayers Witch Hazel"
+    "nickname": "Thayers Witch Hazel",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51ZxG8xVzAL._SX355_.jpg"
   },
   {
     "_id": "444444444444444444444030",
     "userId": "333333333333333333333301",
     "productId": "222222222222222222222037",
     "comment": "",
-    "nickname": "Stirling Red Delicious Bath Soap"
+    "nickname": "Stirling Red Delicious Bath Soap",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2198/0751/products/stirling-shave-soap-img33_300x300.jpg?v=1515710379"
   },
   {
     "_id": "444444444444444444444031",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222002",
     "comment": "",
-    "nickname": "Merkur 34c"
+    "nickname": "Merkur 34c",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2398/1395/products/merkur-34c-heavy-duty-safety-razor_394x.jpg?v=1538437640"
   },
   {
     "_id": "444444444444444444444032",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222005",
     "comment": "vintage German-made blade",
-    "nickname": "Globusmen Straight"
+    "nickname": "Globusmen Straight",
+    "imageUrl": "https://straightrazorpalace.com/attachments/show-tell/101407d1342475024-5-8-globusmen-gold-special-33-solingen-img1459ke.jpg"
   },
   {
     "_id": "444444444444444444444033",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222006",
     "comment": "Tortoise shell handle",
-    "nickname": "The Turtle"
+    "nickname": "The Turtle",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT9WVm5ogwoRE_iYOfrShzZM3srWogpN-Sz2Gp-yNMo_yBgXst"
   },
   {
     "_id": "444444444444444444444034",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222008",
     "comment": "",
-    "nickname": "Silver Blues"
+    "nickname": "Silver Blues",
+    "imageUrl": "https://www.refinedshave.com/wp-content/uploads/2017/05/Gillette-Silver-Blue-1024x768.jpg"
   },
   {
     "_id": "444444444444444444444035",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222009",
     "comment": "too sharp, very aggressive",
-    "nickname": "Feather"
+    "nickname": "Feather",
+    "imageUrl": ""
   },
   {
     "_id": "444444444444444444444036",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222010",
     "comment": "smooth like butter",
-    "nickname": "Astra Platinums"
+    "nickname": "Astra Platinums",
+    "imageUrl": ""
   },
   {
     "_id": "444444444444444444444037",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222011",
     "comment": "2nd favorite",
-    "nickname": "Gillette 7's"
+    "nickname": "Gillette 7's",
+    "imageUrl": ""
   },
   {
     "_id": "444444444444444444444038",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222012",
     "comment": "",
-    "nickname": "Polsilver - Super Iridium"
+    "nickname": "Polsilver - Super Iridium",
+    "imageUrl": ""
   },
   {
     "_id": "444444444444444444444039",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222015",
     "comment": "",
-    "nickname": "RazoRock Plissoft Monster"
+    "nickname": "RazoRock Plissoft Monster",
+    "imageUrl": ""
   },
   {
     "_id": "444444444444444444444040",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222018",
     "comment": "26mm",
-    "nickname": "Stirling Badger"
+    "nickname": "Stirling Badger",
+    "imageUrl": ""
   },
   {
     "_id": "444444444444444444444041",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222025",
     "comment": "awesome",
-    "nickname": "ATT Lemonade"
+    "nickname": "ATT Lemonade",
+    "imageUrl": ""
   },
   {
     "_id": "444444444444444444444042",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222026",
     "comment": "Tobacco | Thyme | Grass | Damp Earth | Wood Smoke",
-    "nickname": "B&M Roam"
+    "nickname": "B&M Roam",
+    "imageUrl": ""
   },
   {
     "_id": "444444444444444444444043",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222027",
     "comment": "",
-    "nickname": "Black Ship Grooming Captain Joe"
+    "nickname": "Black Ship Grooming Captain Joe",
+    "imageUrl": ""
   },
   {
     "_id": "444444444444444444444044",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222028",
     "comment": "",
-    "nickname": "Declaration Grooming - Reserve Lavender"
+    "nickname": "Declaration Grooming - Reserve Lavender",
+    "imageUrl": ""
   },
   {
     "_id": "444444444444444444444045",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222033",
     "comment": "",
-    "nickname": "Stirling Sandalwood Balm"
+    "nickname": "Stirling Sandalwood Balm",
+    "imageUrl": ""
   },
   {
     "_id": "444444444444444444444046",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222034",
     "comment": "",
-    "nickname": "Black Ship Grooming Captain Joe"
+    "nickname": "Black Ship Grooming Captain Joe",
+    "imageUrl": ""
   },
   {
     "_id": "444444444444444444444047",
     "userId": "333333333333333333333302",
     "productId": "222222222222222222222036",
     "comment": "",
-    "nickname": "Thayers Witch Hazel"
+    "nickname": "Thayers Witch Hazel",
+    "imageUrl": ""
   }
 ]
