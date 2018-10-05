@@ -113,14 +113,14 @@ router.put('/:id', jwtAuth, (req, res, next) => {
   const { id } = req.params;
   const userId = req.user.id;
   const {
-    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date,
+    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, share,
   } = req.body;
 
   const updateShave = {
-    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date,
+    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, share,
   };
   const newShave = {
-    userId, razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date,
+    userId, razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, share,
   };
 
 
@@ -174,6 +174,7 @@ router.put('/:id', jwtAuth, (req, res, next) => {
       flattenedShave.id = shave._id;
       flattenedShave.date = shave.date;
       flattenedShave.rating = shave.rating;
+      flattenedShave.share = shave.share;
       res.status(200).json(flattenedShave);
     })
     .catch((err) => {
