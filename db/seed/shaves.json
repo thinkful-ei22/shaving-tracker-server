@@ -10,6 +10,7 @@
     "additionalCareId": "444444444444444444444014",
     "rating": "4",
     "date": "2018-09-21",
+    "imageUrl": "",
     "share": true
   },
   {
@@ -22,7 +23,8 @@
     "aftershaveId": "444444444444444444444013",
     "additionalCareId": null,
     "rating": "5",
-    "date": "2018-09-24"
+    "date": "2018-09-24",
+    "imageUrl": "https://www.giftmyemotions.com/image/cache/GiftsByHannu/GBH-257-800x800.jpg"
   },
   {
     "_id": "555555555555555555555002",
@@ -35,6 +37,7 @@
     "additionalCareId": "444444444444444444444029",
     "rating": "4",
     "date": "2018-09-21",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5n9nwO_JYqgktJmSLQeTj9Ywy8DS-Djmw1PnMgAJVN4r8QhFD",
     "share": true
   },
   {
@@ -47,7 +50,8 @@
     "aftershaveId": "444444444444444444444028",
     "additionalCareId": "444444444444444444444030",
     "rating": "3",
-    "date": "2018-09-24"
+    "date": "2018-09-24",
+    "imageUrl": ""
   },
   {
     "_id": "555555555555555555555004",
@@ -60,6 +64,7 @@
     "additionalCareId": "444444444444444444444047",
     "rating": "4",
     "date": "2018-09-21",
+    "imageUrl": "",
     "share": true
   },
   {
@@ -73,6 +78,7 @@
     "additionalCareId": "444444444444444444444047",
     "rating": "3",
     "date": "2018-09-24",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxga1cQQrLUfLPZqgL8rCuIcEgmoqtmxo-YN_13mRIkuIQkLMX",
     "share": true
   }
 ]
