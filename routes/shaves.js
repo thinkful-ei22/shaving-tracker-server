@@ -173,7 +173,7 @@ router.put('/:id', jwtAuth, (req, res, next) => {
       flattenedShave.id = shave._id;
       flattenedShave.date = shave.date;
       flattenedShave.rating = shave.rating;
-      res.status(201).json(flattenedShave);
+      res.status(200).json(flattenedShave);
     })
     .catch((err) => {
       next(err);
