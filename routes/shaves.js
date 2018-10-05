@@ -129,34 +129,32 @@ router.put('/:id', jwtAuth, (req, res, next) => {
     razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, share,
   } = req.body;
 
+  const updateShave = { $set: {} };
 
-  const updateShave = {
-    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, share,
-  };
+  Object.keys(req.body).forEach((key) => {
+    if (typeof req.body[key] !== 'undefined') {
+      updateShave.$set[key] = req.body[key];
+    }
+  });
+
   const newShave = {
-    userId, razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, share,
+    userId,
+    razorId,
+    bladeId,
+    brushId,
+    latherId,
+    aftershaveId,
+    additionalCareId,
+    rating,
+    date,
+    share,
   };
-
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     const err = new Error('The `id` is not valid');
     err.status = 400;
     return next(err);
   }
-
-
-  const requiredFields = [
-    'razorId', 'bladeId', 'brushId', 'latherId', 'aftershaveId', 'additionalCareId', 'rating', 'date',
-  ];
-  // console.log(req.body);
-  const missingField = requiredFields.find(field => !(field in req.body));
-
-  if (missingField) {
-    const err = new Error(`Missing '${missingField}' in request body`);
-    err.status = 422;
-    return next(err);
-  }
-
 
   const isId = 'Id';
   const fields = Object.keys(newShave);
@@ -207,7 +205,7 @@ router.delete('/:id', jwtAuth, (req, res, next) => {
     return next(err);
   }
 
-  Shave.findOneAndRemove({ _id: id })
+  return Shave.findOneAndRemove({ _id: id })
     .then(() => {
       res.sendStatus(204);
     })
