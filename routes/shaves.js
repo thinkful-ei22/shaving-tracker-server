@@ -37,6 +37,7 @@ router.get('/', jwtAuth, (req, res, next) => {
         flattenedShaves[i].share = shaveEvents[i].share;
         flattenedShaves[i].rating = shaveEvents[i].rating;
         flattenedShaves[i].imageUrl = shaveEvents[i].imageUrl;
+        flattenedShaves[i].comments = shaveEvents[i].comments;
       }
 
       res.json(flattenedShaves);
@@ -64,11 +65,10 @@ router.post('/', jwtAuth, (req, res, next) => {
     err.status = 422;
     return next(err);
   }
-
+  
   const {
     razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, imageUrl, share, comments,
   } = req.body;
-
   const newShave = {
     userId,
     razorId,
