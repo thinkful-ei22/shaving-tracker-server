@@ -12,6 +12,7 @@ const ShaveSchema = new mongoose.Schema({
   date: { type: Date, required: true },
   imageUrl: String,
   share: { type: Boolean, default: false },
+  comments: String,
 });
 
 ShaveSchema.set('toObject', {
