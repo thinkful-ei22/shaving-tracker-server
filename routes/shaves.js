@@ -66,7 +66,7 @@ router.post('/', jwtAuth, (req, res, next) => {
   }
 
   const {
-    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, imageUrl, share,
+    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, imageUrl, share, comments,
   } = req.body;
 
   const newShave = {
@@ -81,6 +81,7 @@ router.post('/', jwtAuth, (req, res, next) => {
     date,
     imageUrl,
     share,
+    comments,
   };
 
   const isId = 'Id';
@@ -114,6 +115,7 @@ router.post('/', jwtAuth, (req, res, next) => {
       flattenedShave.share = shave.share;
       flattenedShave.rating = shave.rating;
       flattenedShave.imageUrl = shave.imageUrl;
+      flattenedShave.comments = shave.comments;
       res.status(201).json(flattenedShave);
     })
     .catch((err) => {
@@ -126,7 +128,7 @@ router.put('/:id', jwtAuth, (req, res, next) => {
   const { id } = req.params;
   const userId = req.user.id;
   const {
-    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, share,
+    razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, share, comments,
   } = req.body;
 
   const updateShave = { $set: {} };
@@ -148,6 +150,7 @@ router.put('/:id', jwtAuth, (req, res, next) => {
     rating,
     date,
     share,
+    comments,
   };
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -188,6 +191,7 @@ router.put('/:id', jwtAuth, (req, res, next) => {
       flattenedShave.date = shave.date;
       flattenedShave.rating = shave.rating;
       flattenedShave.share = shave.share;
+      flattenedShave.comments = shave.comments;
       res.status(200).json(flattenedShave);
       console.log(shave);
       console.log(flattenedShave);
