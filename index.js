@@ -3,23 +3,33 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const cloudinary = require('cloudinary');
 
 // get auth
 const passport = require('passport');
 const localStrategy = require('./passport/local');
 const jwtStrategy = require('./passport/jwt');
 
-const { PORT, CLIENT_ORIGIN } = require('./config');
+const {
+  PORT, CLIENT_ORIGIN, API_KEY, API_SECRET, CLOUD_NAME,
+} = require('./config');
 const { dbConnect } = require('./db-mongoose');
-// const {dbConnect} = require('./db-knex');
 
 const authRouter = require('./routes/auth');
 const userRouter = require('./routes/users');
 const userProductRouter = require('./routes/userProducts');
 const shaveRouter = require('./routes/shaves');
+const imageRouter = require('./routes/images');
 const communityRouter = require('./routes/community');
 
 const app = express();
+
+cloudinary.config({
+  cloud_name: CLOUD_NAME,
+  api_key: API_KEY,
+  api_secret: API_SECRET,
+});
+
 app.use(express.json());
 
 app.use(
@@ -46,6 +56,7 @@ app.use('/api/v1/user', userRouter);
 app.use('/api/v1', authRouter);
 app.use('/api/v1/products/personal', userProductRouter);
 app.use('/api/v1/shaves/', shaveRouter);
+app.use('/api/v1/image', imageRouter);
 app.use('/api/v1/community/', communityRouter);
 
 // Custom 404 Not Found route handler
