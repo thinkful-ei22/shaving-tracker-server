@@ -9,7 +9,6 @@ const { dbConnect, dbDisconnect } = require('../db-mongoose');
 // Set NODE_ENV to `test` to disable http layer logs
 // You can do this in the command line, but this is cross-platform
 process.env.NODE_ENV = 'test';
-process.env.JWT_SECRET = 'TESTING_SECRET';
 
 // Clear the console before each run
 process.stdout.write('\x1Bc\n');

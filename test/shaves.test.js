@@ -127,7 +127,8 @@ describe('API - shaves', function () {
                     expect(resShave[cKey]).to.equal(dbShave[cKey]);
                   });
                 } else if (key === 'date') {
-                  expect(new Date(resShave[key]).toUTCString()).to.equal(dbShave[key].toUTCString());
+                  expect(new Date(resShave[key]).toUTCString())
+                    .to.equal(dbShave[key].toUTCString());
                 } else {
                   expect(resShave[key]).to.equal(dbShave[key]);
                 }
