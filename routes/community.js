@@ -40,6 +40,7 @@ router.get('/shaves/:start/:end', jwtAuth, (req, res, next) => {
             flattenedShaves[i][`${prodType}`] = null;
           }
         });
+        flattenedShaves[i].imageUrl = shaveEvents[i].imageUrl;
         flattenedShaves[i].id = shaveEvents[i]._id;
         flattenedShaves[i].date = shaveEvents[i].date;
         flattenedShaves[i].rating = shaveEvents[i].rating;
