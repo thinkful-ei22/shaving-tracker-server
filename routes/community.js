@@ -23,8 +23,7 @@ router.get('/shaves/:start/:end', jwtAuth, (req, res, next) => {
   const productTypes = ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalCare'];
   const populateQuery = productTypes.map(prodType => ({ path: `${prodType}Id`, populate: { path: 'productId' } }));
 
-  Shave.find({  userId: {$ne: userId},
-                share: true,
+  Shave.find({  share: true,
                 date: {$gte: startFilter, $lte: endFilter}
     })
     .populate(populateQuery)
