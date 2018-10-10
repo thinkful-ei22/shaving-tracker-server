@@ -169,8 +169,10 @@ router.post('/many', jwtAuth, (req, res, next) => {
 
         return UserProduct.create(newUserProduct);
       })
+      .then(newUserProd => UserProduct.findById(newUserProd.id).populate('productId'))
       .then((result) => {
-        response.push({ product: result, status: 200 });
+        const flatResult = createFlattenedUserProduct(result);
+        response.push({ product: flatResult, status: 200 });
         recursion(manyItems.slice(1), response);
       })
       .catch((err) => {
