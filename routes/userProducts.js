@@ -11,6 +11,7 @@ const { createFlattenedUserProduct } = require('../helpers');
 
 const jwtAuth = passport.authenticate('jwt', { session: false });
 
+// eslint-disable-next-line consistent-return
 router.get('/', jwtAuth, (req, res, next) => {
   const userId = req.user.id;
 
@@ -126,9 +127,9 @@ router.post('/', jwtAuth, (req, res, next) => {
 // eslint-disable-next-line no-unused-vars
 router.post('/many', jwtAuth, (req, res, next) => {
   const userId = req.user.id;
+  // eslint-disable-next-line consistent-return
   const recursion = (manyItems, response = []) => {
     if (manyItems.length === 0) {
-      console.log(response);
       return res.json(response);
     }
     let ref;
@@ -155,6 +156,8 @@ router.post('/many', jwtAuth, (req, res, next) => {
       .then((userProduct) => {
         if (userProduct) {
           const err = new Error('Item already exists');
+          err.msg = 'Item already exists';
+          err.product = userProduct;
           err.status = 400;
           return Promise.reject(err);
         }
@@ -167,7 +170,7 @@ router.post('/many', jwtAuth, (req, res, next) => {
         return UserProduct.create(newUserProduct);
       })
       .then((result) => {
-        response.push(result);
+        response.push({ product: result, status: 200 });
         recursion(manyItems.slice(1), response);
       })
       .catch((err) => {
