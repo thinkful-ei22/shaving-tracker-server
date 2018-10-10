@@ -135,7 +135,44 @@ describe('API - shaves', function () {
               });
             });
         });
-        it('should increment the usage counter on all userProducts used');
+        it('should increment the usage counter on all userProducts used', function () {
+          const validUser = {
+            id: seedUsers[0]._id,
+            username: seedUsers[0].username,
+            email: seedUsers[0].email,
+            password: 'wicked',
+          };
+          const authToken = createAuthToken(validUser);
+          const validShave = seedShaves[0];
+          const productTypes = ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalCare'];
+          const productPromises = productTypes.map(type => UserProduct
+            .findById(validShave[`${type}Id`]));
+
+          return Promise.all(productPromises)
+            .then((productsArr) => {
+              expect(productsArr).to.be.an('array');
+
+              productsArr.forEach((product) => {
+                expect(product.totalUsage).to.equal(0);
+                expect(product.currentUsage).to.equal(0);
+              });
+
+              return chai.request(app)
+                .post('/api/v1/shaves')
+                .set('Authorization', `Bearer ${authToken}`)
+                .send(validShave);
+            })
+            .then((res) => {
+              expect(res).to.have.status(201);
+
+              const { body } = res;
+              expect(body).to.be.an('object');
+              productTypes.forEach((type) => {
+                expect(body[type].totalUsage).to.equal(1);
+                expect(body[type].currentUsage).to.equal(1);
+              });
+            });
+        });
       });
       describe('when the user submits an invalid shave', function () {
         it('should reject shaves missing a razor');
