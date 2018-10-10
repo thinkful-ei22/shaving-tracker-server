@@ -1,4 +1,4 @@
-'use strict';
+
 
 const express = require('express');
 
@@ -121,6 +121,62 @@ router.post('/', jwtAuth, (req, res, next) => {
       res.status(201).json(flatResult);
     })
     .catch(err => next(err));
+});
+
+// eslint-disable-next-line no-unused-vars
+router.post('/many', jwtAuth, (req, res, next) => {
+  const userId = req.user.id;
+  const recursion = (manyItems, response = []) => {
+    if (manyItems.length === 0) {
+      console.log(response);
+      return res.json(response);
+    }
+    let ref;
+    const item = manyItems[0];
+    const {
+      brand, model, productType, subtype, comment, nickname,
+    } = item;
+    Product.findOne({
+      brand, model, productType, subtype,
+    })
+      .then((result) => {
+        if (result) {
+          return result;
+        }
+        return Product.create({
+          brand, model, productType, subtype,
+        });
+      })
+      .then((result) => {
+        ref = result;
+        const productId = ref._id;
+        return UserProduct.findOne({ userId, productId });
+      })
+      .then((userProduct) => {
+        if (userProduct) {
+          const err = new Error('Item already exists');
+          err.status = 400;
+          return Promise.reject(err);
+        }
+
+        const productId = ref._id;
+        const newUserProduct = {
+          userId, productId, comment, nickname,
+        };
+
+        return UserProduct.create(newUserProduct);
+      })
+      .then((result) => {
+        response.push(result);
+        recursion(manyItems.slice(1), response);
+      })
+      .catch((err) => {
+        response.push(err);
+        recursion(manyItems.slice(1), response);
+      });
+  };
+
+  recursion(req.body, []);
 });
 
 // eslint-disable-next-line no-unused-vars
