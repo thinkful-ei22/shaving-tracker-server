@@ -4,6 +4,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const Shave = require('../models/shave');
+const UserProduct = require('../models/userProduct');
 const { createFlattenedUserProduct } = require('../helpers');
 
 const jwtAuth = passport.authenticate('jwt', { session: false });
@@ -19,7 +20,7 @@ router.get('/', jwtAuth, (req, res, next) => {
   const productTypes = ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalCare'];
   const populateQuery = productTypes.map(prodType => ({ path: `${prodType}Id`, populate: { path: 'productId' } }));
 
-  Shave.find({ userId })
+  return Shave.find({ userId })
     .populate(populateQuery)
     .then((shaveEvents) => {
       const flattenedShaves = [];
@@ -65,7 +66,7 @@ router.post('/', jwtAuth, (req, res, next) => {
     err.status = 422;
     return next(err);
   }
-  
+
   const {
     razorId, bladeId, brushId, latherId, aftershaveId, additionalCareId, rating, date, imageUrl, share, comments,
   } = req.body;
@@ -99,8 +100,21 @@ router.post('/', jwtAuth, (req, res, next) => {
   const productTypes = ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalCare'];
   const populateQuery = productTypes.map(prodType => ({ path: `${prodType}Id`, populate: { path: 'productId' } }));
 
+  let result;
   Shave.create(newShave)
-    .then(result => Shave.findById(result.id).populate(populateQuery))
+    .then((_result) => {
+      result = _result;
+      // grab the ids for each userProduct involved in the shave
+      // and filter to remove unused productTypes (undefined) so we don't
+      // need a conditional in the usageIncrementPromises
+      const productIds = productTypes.map(type => result[`${type}Id`]).filter(Boolean);
+      const updateObj = { $inc: { totalUsage: 1, currentUsage: 1 } };
+      const usageIncrementPromises = productIds.map(id => (
+        UserProduct.findByIdAndUpdate(id, updateObj)
+      ));
+      return Promise.all(usageIncrementPromises);
+    })
+    .then(() => Shave.findById(result.id).populate(populateQuery))
     .then((shave) => {
       const flattenedShave = {};
       productTypes.forEach((prodType) => {
