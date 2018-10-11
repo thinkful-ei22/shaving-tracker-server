@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 
 const router = express.Router();
@@ -33,6 +31,7 @@ router.get('/', jwtAuth, (req, res, next) => {
     .catch(err => next(err));
 });
 
+// eslint-disable-next-line consistent-return
 router.post('/', jwtAuth, (req, res, next) => {
   const userId = req.user.id;
   if (!mongoose.Types.ObjectId.isValid(userId)) {
