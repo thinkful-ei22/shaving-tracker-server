@@ -1,6 +1,6 @@
 const createFlattenedUserProduct = (populatedUserProduct) => {
   const flattened = {};
-  const userProductProperties = ['nickname', 'comment', 'imageUrl', 'totalUsage', 'currentUsage'];
+  const userProductProperties = ['nickname', 'comment', 'imageUrl', 'totalUsage', 'currentUsage', 'userId'];
   const globalProductProperties = ['subtype', 'productType', 'brand', 'model', 'id'];
 
   // copy the user's custom properties into the new object
