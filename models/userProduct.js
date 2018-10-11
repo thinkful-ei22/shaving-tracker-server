@@ -6,6 +6,8 @@ const UserProductSchema = new mongoose.Schema({
   comment: String,
   nickname: String,
   imageUrl: String,
+  totalUsage: { type: Number, default: 0 },
+  currentUsage: { type: Number, default: 0 },
 });
 
 UserProductSchema.set('toObject', {
