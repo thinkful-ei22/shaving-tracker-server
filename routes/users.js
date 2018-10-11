@@ -1,9 +1,5 @@
 const express = require('express');
-const passport = require('passport');
-const mongoose = require('mongoose');
 const User = require('../models/user');
-const UserProduct = require('../models/userProduct');
-
 
 const router = express.Router();
 
@@ -99,8 +95,12 @@ router.post('/', (req, res, next) => {
       .json(newUser))
     .catch((err) => {
       if (err.code === 11000) {
-        err = new Error('The username already exists'); // eslint-disable-line no-param-reassign
-        err.status = 400; // eslint-disable-line no-param-reassign
+        /* eslint-disable no-param-reassign */
+        err = new Error('The username already exists');
+        err.reason = 'ValidationError';
+        err.status = 422;
+        err.location = 'username';
+        /* eslint-enable */
       }
       next(err);
     });
