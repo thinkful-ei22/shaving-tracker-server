@@ -4,7 +4,6 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const Shave = require('../models/shave');
-const UserProduct = require('../models/userProduct');
 const { createFlattenedUserProduct } = require('../helpers');
 
 const jwtAuth = passport.authenticate('jwt', { session: false });
@@ -23,9 +22,10 @@ router.get('/shaves/:start/:end', jwtAuth, (req, res, next) => {
   const productTypes = ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalCare'];
   const populateQuery = productTypes.map(prodType => ({ path: `${prodType}Id`, populate: { path: 'productId' } }));
 
-  Shave.find({  share: true,
-                date: {$gte: startFilter, $lte: endFilter}
-    })
+  return Shave.find({
+    share: true,
+    date: { $gte: startFilter, $lte: endFilter },
+  })
     .populate(populateQuery)
     .populate('userId')
     .then((shaveEvents) => {
@@ -52,7 +52,5 @@ router.get('/shaves/:start/:end', jwtAuth, (req, res, next) => {
       next(err);
     });
 });
-
-
 
 module.exports = router;

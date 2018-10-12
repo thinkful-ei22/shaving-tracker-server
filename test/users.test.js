@@ -4,16 +4,9 @@ const chaiHttp = require('chai-http');
 const mongoose = require('mongoose');
 
 const { app } = require('../index');
-const { createAuthToken } = require('../utils/auth');
 
 // models
 const User = require('../models/user');
-const Product = require('../models/product');
-const UserProduct = require('../models/userProduct');
-
-// seedData
-const seedUsers = require('../db/seed/users');
-const seedProducts = require('../db/seed/products');
 
 const { expect } = chai;
 chai.use(chaiHttp);

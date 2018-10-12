@@ -183,14 +183,14 @@ router.post('/many', jwtAuth, (req, res, next) => {
   recursion(req.body, []);
 });
 
-// eslint-disable-next-line no-unused-vars
-router.put('/:id', jwtAuth, (req, res, next) => {
+// // eslint-disable-next-line no-unused-vars
+// router.put('/:id', jwtAuth, (req, res, next) => {
 
-});
+// });
 
-// eslint-disable-next-line no-unused-vars
-router.delete('/:id', jwtAuth, (req, res, next) => {
+// // eslint-disable-next-line no-unused-vars
+// router.delete('/:id', jwtAuth, (req, res, next) => {
 
-});
+// });
 
 module.exports = router;
