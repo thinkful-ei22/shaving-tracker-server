@@ -11,7 +11,7 @@ const User = require('../models/user');
 const { expect } = chai;
 chai.use(chaiHttp);
 
-describe.only('API - users', function () {
+describe('API - users', function () {
   beforeEach(function () {
     return mongoose.connection.db.dropDatabase();
   });
