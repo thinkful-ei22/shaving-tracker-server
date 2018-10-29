@@ -11,8 +11,7 @@
     },
    password: {
     type: String,
-    required: true,
-    unique: true
+    required: true
    },
    email: {
     type: String,
@@ -25,11 +24,11 @@
 
 ```js
 function validateEmail(email) {
-const re = new RegExp('[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}','i');
-if (!email) {
-  return true;
-}
-return re.test(email);
+  const re = new RegExp('[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}', 'i');
+  if (!email) {
+    return true;
+  }
+  return re.test(email);
 }
 ```
 
@@ -37,37 +36,13 @@ return re.test(email);
 
 ```js
 {
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-  razors: [{
-    productId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
-    comment: String
-    nickname: String
-  }],
-  blades: [{
-    productId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
-    comment: String
-    nickname: String
-  }],
-  brushes: [{
-    productId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
-    comment: String
-    nickname: String
-  }],
-  lathers: [{
-    productId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
-    comment: String
-    nickname: String
-  }],
-  aftershaves: [{
-    productId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
-    comment: String
-    nickname: String
-  }],
-  additionalcares: [{
-    productId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
-    comment: String
-    nickname: String
-  }]
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+  comment: String,
+  nickname: String,
+  imageUrl: String,
+  totalUsage: { type: Number, default: 0 },
+  currentUsage: { type: Number, default: 0 },
 }
 ```
 
@@ -75,15 +50,18 @@ return re.test(email);
 
 ```js
 {
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-  razorId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
-  bladeId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
-  brushId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
-  latherId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
-  aftershaveId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
-  additionalCare: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  razorId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct' },
+  bladeId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct' },
+  brushId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct' },
+  latherId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct' },
+  aftershaveId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct' },
+  additionalCareId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserProduct' },
   rating: Number,
-  date: { type:Date, required:true }
+  date: { type: Date, required: true },
+  imageUrl: String,
+  share: { type: Boolean, default: false },
+  comments: String,
 }
 ```
 
@@ -91,8 +69,8 @@ return re.test(email);
 
 ```js
 {
-  type: String,
-  productType: { type: String, enum: ["razor", "blade", "brush", "lather", "aftershave", "additonalcare"]},
+  subtype: String,
+  productType: { type: String, enum: ['razor', 'blade', 'brush', 'lather', 'aftershave', 'additionalcare'] },
   brand: String,
   model: String,
 }
