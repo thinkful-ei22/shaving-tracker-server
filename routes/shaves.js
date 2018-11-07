@@ -207,8 +207,6 @@ router.put('/:id', jwtAuth, (req, res, next) => {
       flattenedShave.share = shave.share;
       flattenedShave.comments = shave.comments;
       res.status(200).json(flattenedShave);
-      console.log(shave);
-      console.log(flattenedShave);
     })
     .catch((err) => {
       next(err);
